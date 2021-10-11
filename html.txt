@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="style.css">
+    <title>Document</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                  <a href="#">
+                    <div class="icon"></div>
+                    <div class="title"><h1>Brand Name</h1></div>
+                   </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="icon"><ion-icon name="home-outline"></ion-icon></i></div>
+                    <div class="title">Dashboard</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#"> 
+                    <div class="icon"><ion-icon name="person-circle-outline"></ion-icon></div>
+                    <div class="title">Customers</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="icon"><ion-icon name="information-circle-outline"></ion-icon></div>
+                    <div class="title">Help</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#"> 
+                    <div class="icon"><ion-icon name="settings-outline"></ion-icon></div>
+                    <div class="title">Settings</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#"> 
+                    <div class="icon"><ion-icon name="key-outline"></ion-icon></div>
+                    <div class="title">Password</div>
+                  </a>
+                </li>
+                <li>
+                 <a href="#"> 
+                    <div class="icon"><ion-icon name="log-out-outline"></ion-icon></div>
+                    <div class="title">SignOut</div>
+                  </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let toggle=document.querySelector('.toggle');
+        let navigation=document.querySelector('.navigation');
+        let main=document.querySelector('.main');
+
+        toggle.onclick = function(){
+             navigation.classList.toggle('active')
+             main.classList.toggle('active')
+
+
+         }
+
+
+
+        let list= document.querySelectorAll(".navigation li " );
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item)=>
+        item.addEventListener('mouseover',activeLink));
+    </script>
+
+
+</body>
+</html>
+
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Ubuntu',sans-serif;
+}
+:root{
+    --blue:#003147;
+    --white:#fff;
+    --grey:#f5f5f5;
+    --black1:#222;
+    --black2:#999;
+}
+
+
+
+
+body{
+    min-height: 100wh;
+    overflow-x: hidden;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+}
+
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background:var(--blue);
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    overflow:hidden ;
+
+}
+
+
+
+.navigation.active{
+    width: 80px;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+}
+
+.navigation ul li{
+    position: relative;
+    width: 200%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered
+{
+
+    background: aqua;
+
+}
+
+
+.navigation ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+
+
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hoered a
+{
+    color: var(--blue);
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+
+}
+.navigation ul li a .icon ion-icon{
+    font-size: 20px;
+
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap; 
+
+} 
+
+
+.main{
+    position: absolute;
+    width: calc(100% -300px);
+    left: 300px;
+    min-height:100vh;
+    background: var(--white);
+    transition: 0.5s;
+
+}
+
+.main.active{
+    width: calc(100% -80px);
+    left:80px;
+
+
+
+}
+.topbar{
+
+    width:100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1px;
+
+}
+.toggle{
+    position: relative;
+    top:0;
+    width: 50px;
+    height: 60px;
+    background: var(--white);
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    font-size: 2.5em;
+}
+
+
+.toggle ion-icon{
+    color: #111;
+
+}
+
+ 
+
+
