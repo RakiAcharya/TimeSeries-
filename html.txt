@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"  href="style.css">
+    <link rel="stylesheet"  href="style1.css">
     <title>Document</title>
 
 </head>
@@ -60,12 +60,163 @@
             <div class="topbar">
                 <div class="toggle">
                     <ion-icon name="menu-outline"></ion-icon>
-
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            </div>    
+        </div>      
+                  <div class="wrapper">
+                    <div class="row">
+                      <div class="col-3 col-m-6 col-sm-6">
+                        <div class="counter bg-primary">
+                          <p>
+                            <i class="fas fa-tasks"></i>
+                          </p>
+                          <h3>100+</h3>
+                          <p>To do</p>
+                        </div>
+                      </div>
+                      <div class="col-3 col-m-6 col-sm-6">
+                        <div class="counter bg-warning">
+                          <p>
+                            <i class="fas fa-spinner"></i>
+                          </p>
+                          <h3>100+</h3>
+                          <p>In progress</p>
+                        </div>
+                      </div>
+                      <div class="col-3 col-m-6 col-sm-6">
+                        <div class="counter bg-success">
+                          <p>
+                            <i class="fas fa-check-circle"></i>
+                          </p>
+                          <h3>100+</h3>
+                          <p>Completed</p>
+                        </div>
+                      </div>
+                      <div class="col-3 col-m-6 col-sm-6">
+                        <div class="counter bg-danger">
+                          <p>
+                            <i class="fas fa-bug"></i>
+                          </p>
+                          <h3>100+</h3>
+                          <p>Issues</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8 col-m-12 col-sm-12">
+                        <div class="card">
+                          <div class="card-header">
+                            <h3 style=" color:#003147">
+                              Table
+                            </h3>
+                            <i class="fas fa-ellipsis-h"></i>
+                          </div>
+                          <div class="card-content">
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>#</th>
+                                  <th>Project</th>
+                                  <th>Manager</th>
+                                  <th>Status</th>
+                                  <th>Due date</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>1</td>
+                                  <td>React</td>
+                                  <td>Tran Anh Tuat</td>
+                                  <td>
+                                    <span class="dot">
+                                      <i class="bg-success"></i>
+                                      Completed
+                                    </span>
+                                  </td>
+                                  <td>17/07/2020</td>
+                                </tr>
+                                <tr>
+                                  <td>2</td>
+                                  <td>Vue</td>
+                                  <td>Bui Nhu Sang</td>
+                                  <td>
+                                    <span class="dot">
+                                      <i class="bg-warning"></i>
+                                      In progress
+                                    </span>
+                                  </td>
+                                  <td>18/07/2020</td>
+                                </tr>
+                                <tr>
+                                  <td>3</td>
+                                  <td>Laravel</td>
+                                  <td>Phan Nhat Truong</td>
+                                  <td>
+                                    <span class="dot">
+                                      <i class="bg-warning"></i>
+                                      In progress
+                                    </span>
+                                  </td>
+                                  <td>17/07/2020</td>
+                                </tr>
+                                <tr>
+                                  <td>4</td>
+                                  <td>Django</td>
+                                  <td>Le Anh Tuan</td>
+                                  <td>
+                                    <span class="dot">
+                                      <i class="bg-danger"></i>
+                                      Delayed
+                                    </span>
+                                  </td>
+                                  <td>07/07/2020</td>
+                                </tr>
+                                <tr>
+                                  <td>5</td>
+                                  <td>MEAN</td>
+                                  <td>John Evan</td>
+                                  <td>
+                                    <span class="dot">
+                                      <i class="bg-primary"></i>
+                                      Pending
+                                    </span>
+                                  </td>
+                                  <td>20/08/2020</td>
+                                </tr>
+                                <tr>
+                                  <td>6</td>
+                                  <td>MERN</td>
+                                  <td>Robert</td>
+                                  <td>
+                                    <span class="dot">
+                                      <i class="bg-primary"></i>
+                                      Pending
+                                    </span>
+                                  </td>
+                                  <td>20/08/2020</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-m-12 col-sm-12">
+                        <div class="card">
+                          <div class="card-header">
+                            <h3>
+                              Chart
+                            </h3>
+                          </div>
+                          <div class="card-content">
+                            <canvas id="myChart"></canvas>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      </div>
+  </div>
 
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -97,6 +248,8 @@
 
 </body>
 </html>
+
+
 
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@200;300;400;500;600;700;800;900&display=swap');
@@ -266,5 +419,157 @@ body{
 }
 
  
+.wrapper {
+	padding: 10px;
+	margin-left: 120px;
+	padding-top: 75px;
+	background: var(--second-bg-color);
+	transition: margin-left .5s;
+}
+
+
+
+.sidebar-expand .wrapper {
+	margin-left: 250px;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+.row:after, .row:before {
+	box-sizing: border-box;
+}
+
+[class*="col-"] {
+	padding: 10px;
+}
+
+
+
+/* Small devices >= 600px */
+@media only screen and (min-width: 600px) {
+	.col-sm-1 {width: 8.33%;}
+	.col-sm-2 {width: 16.66%;}
+	.col-sm-3 {width: 25%;}
+	.col-sm-4 {width: 33.33%;}
+	.col-sm-5 {width: 41.66%;}
+	.col-sm-6 {width: 50%;}
+	.col-sm-7 {width: 58.33%;}
+	.col-sm-8 {width: 66.66%;}
+	.col-sm-9 {width: 75%;}
+	.col-sm-10 {width: 83.33%;}
+	.col-sm-11 {width: 91.66%;}
+	.col-sm-12 {width: 100%;}
+}
+
+/* Medium devices >= 768px */
+@media only screen and (min-width: 768px) {
+	.col-m-1 {width: 8.33%;}
+	.col-m-2 {width: 16.66%;}
+	.col-m-3 {width: 25%;}
+	.col-m-4 {width: 33.33%;}
+	.col-m-5 {width: 41.66%;}
+	.col-m-6 {width: 50%;}
+	.col-m-7 {width: 58.33%;}
+	.col-m-8 {width: 66.66%;}
+	.col-m-9 {width: 75%;}
+	.col-m-10 {width: 83.33%;}
+	.col-m-11 {width: 91.66%;}
+	.col-m-12 {width: 100%;}
+}
+
+/* laptops/desktops >= 992px */
+@media only screen and (min-width: 992px) {
+	.col-1 {width: 8.33%;}
+	.col-2 {width: 16.66%;}
+	.col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+}
+
+/* large laptops and desktops >= 1200px */
+@media only screen and (min-width: 1200px) {
+	.col-xl-1 {width: 8.33%;}
+	.col-xl-2 {width: 16.66%;}
+	.col-xl-3 {width: 25%;}
+	.col-xl-4 {width: 33.33%;}
+	.col-xl-5 {width: 41.66%;}
+	.col-xl-6 {width: 50%;}
+	.col-xl-7 {width: 58.33%;}
+	.col-xl-8 {width: 66.66%;}
+	.col-xl-9 {width: 75%;}
+	.col-xl-10 {width: 83.33%;}
+	.col-xl-11 {width: 91.66%;}
+	.col-xl-12 {width: 100%;}
+}
+
+.counter {
+	padding: 5px;
+    margin-top: 1px;
+	text-align: center;
+	color: rgb(7, 7, 7);
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.couner i {
+	font-size: 50px;
+}
+
+.card {
+	background: var(--main-bg-color);
+	color: var(--main-color);
+	border-radius: 10px;
+	margin-bottom: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card-header {
+	padding: 15px 30px;
+	border-bottom: 1px solid var(--second-bg-color);
+	position: relative;
+}
+
+.card-content {
+	padding: 20px;
+	overflow-x: auto;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table td {
+	border-top: 1px solid var(--second-bg-color);
+	padding: 15px;
+}
+
+table th {
+	border-top: 1px solid var(--second-bg-color);
+	border-bottom: 1px solid var(--second-bg-color);
+	padding: 15px 12px;
+	text-align: left;
+}
+
+.dot i {
+	display: inline-block;
+	width: .385rem;
+	height: .385rem;
+	margin-right: .385rem;
+	vertical-align: middle;
+	border-radius: 50%;
+}
+
 
 
