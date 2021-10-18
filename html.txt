@@ -4,224 +4,148 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"  href="style1.css">
+    <link rel="stylesheet"  href="style.css">
     <title>Document</title>
 
-</head>
-<body>
-    <div class="container">
-        <div class="navigation">
-            <ul>
-                <li>
-                  <a href="#">
-                    <div class="icon"></div>
-                    <div class="title"><h1>Brand Name</h1></div>
-                   </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <div class="icon"><ion-icon name="home-outline"></ion-icon></i></div>
-                    <div class="title">Dashboard</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#"> 
-                    <div class="icon"><ion-icon name="person-circle-outline"></ion-icon></div>
-                    <div class="title">Customers</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <div class="icon"><ion-icon name="information-circle-outline"></ion-icon></div>
-                    <div class="title">Help</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#"> 
-                    <div class="icon"><ion-icon name="settings-outline"></ion-icon></div>
-                    <div class="title">Settings</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#"> 
-                    <div class="icon"><ion-icon name="key-outline"></ion-icon></div>
-                    <div class="title">Password</div>
-                  </a>
-                </li>
-                <li>
-                 <a href="#"> 
-                    <div class="icon"><ion-icon name="log-out-outline"></ion-icon></div>
-                    <div class="title">SignOut</div>
-                  </a>
-                </li>
-            </ul>
-        </div>
-        <div class="main">
-            <div class="topbar">
-                <div class="toggle">
-                    <ion-icon name="menu-outline"></ion-icon>
+  </head>
+  <body>
+      <div class="container">
+          <div class="navigation">
+              <ul>
+                  <li>
+                    <a href="#">
+                      <div class="icon"></div>
+                      <div class="title"><h2>Brand Name</h2></div>
+                     </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="icon"><ion-icon name="home-outline"></ion-icon></i></div>
+                      <div class="title">Dashboard</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"> 
+                      <div class="icon"><ion-icon name="person-circle-outline"></ion-icon></div>
+                      <div class="title">Customers</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="icon"><ion-icon name="information-circle-outline"></ion-icon></div>
+                      <div class="title">Help</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"> 
+                      <div class="icon"><ion-icon name="settings-outline"></ion-icon></div>
+                      <div class="title">Settings</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"> 
+                      <div class="icon"><ion-icon name="key-outline"></ion-icon></div>
+                      <div class="title">Password</div>
+                    </a>
+                  </li>
+                  <li>
+                   <a href="#"> 
+                      <div class="icon"><ion-icon name="log-out-outline"></ion-icon></div>
+                      <div class="title">SignOut</div>
+                    </a>
+                  </li>
+              </ul>
+          </div>
+          <div class="main">
+              <div class="topbar">
+                  <div class="toggle">
+                      <ion-icon name="menu-outline"></ion-icon>
+                  </div>
+              </div> 
+            <div class="GraphdBox">
+             
+              <div class="box">
+                <div class="GName">Something</div>
+                <canvas id="myChart"></canvas>
+              </div> 
+              <div class="box">
+                <div class="GName">Something</div>
+                <canvas id="Chart1"></canvas>
+              </div> 
+             </div>
+             <div class="details">
+                   <div class="recentOrders">
+                     <div class="cardHeader">
+                       <h2>Recent Order</h2>
+                       <a href="#" class='btn'>View all</a>
+                     </div>
+                     <table>
+                       <thead>
+                       <tr>
+                         <td>Name</td>
+                         <td>Price</td>
+                         <td>Payment</td>
+                         <td>Status</td>
+                       </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                        <td>Refrigerator</td>
+                        <td>$1200</td>
+                        <td>paid</td>
+                        <td><span class="status delivered">delivered</td>
+                        </tr>
+                        <tr>
+                          <td>Refrigerator</td>
+                          <td>$1200</td>
+                          <td>paid</td>
+                          <td><span class="status_delivered">Delivered</td>
+                          </tr>
+                          <tr>
+                            <td>Refrigerator</td>
+                            <td>$1200</td>
+                            <td>paid</td>
+                            <td><span class="status delivered">delivered</td>
+                            </tr>
+                            <tr>
+                              <td>Refrigerator</td>
+                              <td>$1200</td>
+                              <td>paid</td>
+                              <td><span class="status delivered">Delivered</td>
+                              </tr>
+                              <tr>
+                                <td>Refrigerator</td>
+                                <td>$1200</td>
+                                <td>paid</td>
+                                <td><span class="status delivered">Delivered</td>
+                                </tr>
+                        </tbody>
+                     </table>
+                   </div>
+                 </div>
+                 <div class="Graph">
+                    <div class="Chart-header">
+                      <h3>
+                        Chart
+                      </h3>
                     </div>
-                </div>
-            </div>    
-        </div>      
-                  <div class="wrapper">
-                    <div class="row">
-                      <div class="col-3 col-m-6 col-sm-6">
-                        <div class="counter bg-primary">
-                          <p>
-                            <i class="fas fa-tasks"></i>
-                          </p>
-                          <h3>100+</h3>
-                          <p>To do</p>
-                        </div>
-                      </div>
-                      <div class="col-3 col-m-6 col-sm-6">
-                        <div class="counter bg-warning">
-                          <p>
-                            <i class="fas fa-spinner"></i>
-                          </p>
-                          <h3>100+</h3>
-                          <p>In progress</p>
-                        </div>
-                      </div>
-                      <div class="col-3 col-m-6 col-sm-6">
-                        <div class="counter bg-success">
-                          <p>
-                            <i class="fas fa-check-circle"></i>
-                          </p>
-                          <h3>100+</h3>
-                          <p>Completed</p>
-                        </div>
-                      </div>
-                      <div class="col-3 col-m-6 col-sm-6">
-                        <div class="counter bg-danger">
-                          <p>
-                            <i class="fas fa-bug"></i>
-                          </p>
-                          <h3>100+</h3>
-                          <p>Issues</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-8 col-m-12 col-sm-12">
-                        <div class="card">
-                          <div class="card-header">
-                            <h3 style=" color:#003147">
-                              Table
-                            </h3>
-                            <i class="fas fa-ellipsis-h"></i>
-                          </div>
-                          <div class="card-content">
-                            <table>
-                              <thead>
-                                <tr>
-                                  <th>#</th>
-                                  <th>Project</th>
-                                  <th>Manager</th>
-                                  <th>Status</th>
-                                  <th>Due date</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>1</td>
-                                  <td>React</td>
-                                  <td>Tran Anh Tuat</td>
-                                  <td>
-                                    <span class="dot">
-                                      <i class="bg-success"></i>
-                                      Completed
-                                    </span>
-                                  </td>
-                                  <td>17/07/2020</td>
-                                </tr>
-                                <tr>
-                                  <td>2</td>
-                                  <td>Vue</td>
-                                  <td>Bui Nhu Sang</td>
-                                  <td>
-                                    <span class="dot">
-                                      <i class="bg-warning"></i>
-                                      In progress
-                                    </span>
-                                  </td>
-                                  <td>18/07/2020</td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>Laravel</td>
-                                  <td>Phan Nhat Truong</td>
-                                  <td>
-                                    <span class="dot">
-                                      <i class="bg-warning"></i>
-                                      In progress
-                                    </span>
-                                  </td>
-                                  <td>17/07/2020</td>
-                                </tr>
-                                <tr>
-                                  <td>4</td>
-                                  <td>Django</td>
-                                  <td>Le Anh Tuan</td>
-                                  <td>
-                                    <span class="dot">
-                                      <i class="bg-danger"></i>
-                                      Delayed
-                                    </span>
-                                  </td>
-                                  <td>07/07/2020</td>
-                                </tr>
-                                <tr>
-                                  <td>5</td>
-                                  <td>MEAN</td>
-                                  <td>John Evan</td>
-                                  <td>
-                                    <span class="dot">
-                                      <i class="bg-primary"></i>
-                                      Pending
-                                    </span>
-                                  </td>
-                                  <td>20/08/2020</td>
-                                </tr>
-                                <tr>
-                                  <td>6</td>
-                                  <td>MERN</td>
-                                  <td>Robert</td>
-                                  <td>
-                                    <span class="dot">
-                                      <i class="bg-primary"></i>
-                                      Pending
-                                    </span>
-                                  </td>
-                                  <td>20/08/2020</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-4 col-m-12 col-sm-12">
-                        <div class="card">
-                          <div class="card-header">
-                            <h3>
-                              Chart
-                            </h3>
-                          </div>
-                          <div class="card-content">
-                            <canvas id="myChart"></canvas>
-                          </div>
-                        </div>
-                      </div>
+                    <div class="Chart-content">
+                      <canvas id="Chart3"></canvas>
                     </div>
                   </div>
-      </div>
-  </div>
-
-
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script>
+             </div>   
+        </div>     
+      
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.1.1/d3.min.js" integrity="sha512-COTaPOlz12cG4fSfcBsxZsjauBAyldqp+8FQUM/dZHm+ts/jR4AFoJhCqxy8K10Jrf3pojfsbq7fAPTb1XaVkg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script> -->
+        <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+        <script src="Chart.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      
+        <script>
+          
         let toggle=document.querySelector('.toggle');
         let navigation=document.querySelector('.navigation');
         let main=document.querySelector('.main');
@@ -248,6 +172,8 @@
 
 </body>
 </html>
+
+
 
 
 
@@ -374,7 +300,7 @@ body{
 
 
 .main{
-    position: absolute;
+    position: relative;
     width: calc(100% -300px);
     left: 300px;
     min-height:100vh;
@@ -418,158 +344,341 @@ body{
 
 }
 
+.GraphdBox{
+
+position: relative;
+width:100%;
+padding: 20px;
+display: grid;
+grid-template-columns: 1fr 2fr;
+grid-gap: 30px;
+min-height: 100px;
+}
+
+.GraphdBox .box{
+    position: relative;
+    background: var(--white);
+    padding: 20px;
+    width: 95%;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08); 
+   
+}
+
+.GraphdBox .box .GName{
+    position: relative;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--blue);
+}
+
+
+
+.GraphdBox .box :hover{
+    background: var(--blue);
+}
+
+
+.GraphdBox .box .GName:hover{
+    color: var(--white);
+}
+
+
+
+
+.details{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap:30px;
+    /* margin-top: 10px; */
+}
+
+.details .recentOrders{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+
+}
+.cardHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.cardHeader h2{
+    font-weight: 600;
+    color: var(--blue);
+
+}
+.btn{
+    position: relative;
+    padding: 5px 10px;
+    background: var(--blue);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+
+
+}
+
+.details table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;  
+
+}
+.details table  thead td{
+    font-weight: 600;
+
+}
+
+.details .recentOrders table tr{
+    color: var(--black1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+
+.details .recentOrders table tr:last-child{
+
+    border-bottom: none;
+
+}
+
+.details .recentOrders table tr:hover{
+    background: var(--blue);
+    color: var(--white);
+}
+
+
+.details .recentOrders table tr td{
+    padding: 10px;
+}
+
+.details .recentOrders table tr td:last-child{
+    text-align: end;
+}
+
+.details .recentOrders table tr td:last-child(2){
+    text-align: end;
+}
+
+.details .recentOrders table tr td:last-child(3){
+    text-align: center;
+
+}
+.status.delivered{
+    padding: 2px 4px;
+    background: #8de02c;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+
+.Graph{
+position: relative;
+width:100%;
+padding: 20px;
+display: grid;
+}
+.Graph .Chart-content{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    width: 95%;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+   
+   
+}
+.Graph .Chart-content:hover{
+    background: var(--blue);
+}
+
+
+
+
+const primaryColor = '#4834d4'
+const warningColor = '#f0932b'
+const successColor = '#6ab04c'
+const dangerColor = '#eb4d4b'
+
  
-.wrapper {
-	padding: 10px;
-	margin-left: 120px;
-	padding-top: 75px;
-	background: var(--second-bg-color);
-	transition: margin-left .5s;
+
+
+
+
+var ctx = document.getElementById('myChart').getContext('2d');
+
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        plugins:{   
+           legend: {
+             display: false,
+             responsive: false
+                   },
+                }
+           }
+});
+
+
+var ctx = document.getElementById('Chart1').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Spidle_power(%)', 'Blue', 'spindle rear bering temp', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(54, 162, 235, 0.8)',
+                'rgba(255, 206, 86, 0.8)',
+                'rgba(75, 192, 192, 0.8)',
+                'rgba(153, 102, 255, 0.8)',
+                'rgba(255, 159, 64, 0.8)'
+            ],
+        }] 
+    },
+    options: {
+        plugins:{   
+           legend: {
+             display: false
+                   },
+                }
+           }
+});
+
+
+
+var ctx = document.getElementById('Chart3')
+ctx.height = 100
+ctx.width = 100
+var data = {
+	labels: ['January', 'February', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+	datasets: [{
+		fill: false,
+		label: 'Completed',
+		borderColor: successColor,
+		data: [120, 115, 130, 100, 123, 88, 99, 66, 120, 52, 59],
+		borderWidth: 2,
+		lineTension: 0,
+	}, {
+		fill: false,
+		label: 'Issues',
+		borderColor: dangerColor,
+		data: [66, 44, 12, 48, 99, 56, 78, 23, 100, 22, 47],
+		borderWidth: 2,
+		lineTension: 0,
+	}]
 }
 
-
-
-.sidebar-expand .wrapper {
-	margin-left: 250px;
-}
-
-.row {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-}
-
-.row:after, .row:before {
-	box-sizing: border-box;
-}
-
-[class*="col-"] {
-	padding: 10px;
-}
+var lineChart = new Chart(ctx, {
+	type: 'line',
+	data: data,
+	options: {
+		maintainAspectRatio: false,
+		bezierCurve: false,
+	}
+})
 
 
 
-/* Small devices >= 600px */
-@media only screen and (min-width: 600px) {
-	.col-sm-1 {width: 8.33%;}
-	.col-sm-2 {width: 16.66%;}
-	.col-sm-3 {width: 25%;}
-	.col-sm-4 {width: 33.33%;}
-	.col-sm-5 {width: 41.66%;}
-	.col-sm-6 {width: 50%;}
-	.col-sm-7 {width: 58.33%;}
-	.col-sm-8 {width: 66.66%;}
-	.col-sm-9 {width: 75%;}
-	.col-sm-10 {width: 83.33%;}
-	.col-sm-11 {width: 91.66%;}
-	.col-sm-12 {width: 100%;}
-}
 
-/* Medium devices >= 768px */
-@media only screen and (min-width: 768px) {
-	.col-m-1 {width: 8.33%;}
-	.col-m-2 {width: 16.66%;}
-	.col-m-3 {width: 25%;}
-	.col-m-4 {width: 33.33%;}
-	.col-m-5 {width: 41.66%;}
-	.col-m-6 {width: 50%;}
-	.col-m-7 {width: 58.33%;}
-	.col-m-8 {width: 66.66%;}
-	.col-m-9 {width: 75%;}
-	.col-m-10 {width: 83.33%;}
-	.col-m-11 {width: 91.66%;}
-	.col-m-12 {width: 100%;}
-}
+// var ctx = document.getElementById('myChart').getContext('2d');
+//       d3.csv('download').then(function(datapoints){
+//         console.log(datapoints)
+//         const Date=[];
+//         const Spindle=[];
+//         for(i=0;i< datapoints.length;i++){
+//            Date.push(datapoints[i].Date)
+//            Spindle.push(datapoints[i].Forecast)
 
-/* laptops/desktops >= 992px */
-@media only screen and (min-width: 992px) {
-	.col-1 {width: 8.33%;}
-	.col-2 {width: 16.66%;}
-	.col-3 {width: 25%;}
-	.col-4 {width: 33.33%;}
-	.col-5 {width: 41.66%;}
-	.col-6 {width: 50%;}
-	.col-7 {width: 58.33%;}
-	.col-8 {width: 66.66%;}
-	.col-9 {width: 75%;}
-	.col-10 {width: 83.33%;}
-	.col-11 {width: 91.66%;}
-	.col-12 {width: 100%;}
-}
+//         }
 
-/* large laptops and desktops >= 1200px */
-@media only screen and (min-width: 1200px) {
-	.col-xl-1 {width: 8.33%;}
-	.col-xl-2 {width: 16.66%;}
-	.col-xl-3 {width: 25%;}
-	.col-xl-4 {width: 33.33%;}
-	.col-xl-5 {width: 41.66%;}
-	.col-xl-6 {width: 50%;}
-	.col-xl-7 {width: 58.33%;}
-	.col-xl-8 {width: 66.66%;}
-	.col-xl-9 {width: 75%;}
-	.col-xl-10 {width: 83.33%;}
-	.col-xl-11 {width: 91.66%;}
-	.col-xl-12 {width: 100%;}
-}
+//         // setup
+//       const data = {
+//         labels: ['S.P.', 'S.M.T.',
+//         'S.F.B.T.', 'S.R.B.T.',
+//         'S.C.T.', 'T.A.','V_RMS_X',
+//         'V_RMS_Y','V_RMS_Z'],
+//         datasets: [{
+//           data: Spindle,
+//           backgroundColor: [
+//             'rgba(255, 26, 104, 0.5)',
+//             'rgba(54, 162, 235, 0.5)',
+//             'rgba(255, 206, 86, 0.5)',
+//             'rgba(75, 192, 192, 0.5)',
+//             'rgba(153, 102, 255, 0.5)',
+//             'rgba(255, 159, 64, 0.5)',
+//             'rgba(0, 0, 0, 0.5)'
+//           ],
+//           borderColor: [
+//             'rgba(255, 26, 104, 1)',
+//             'rgba(54, 162, 235, 1)',
+//             'rgba(255, 206, 86, 1)',
+//             'rgba(75, 192, 192, 1)',
+//             'rgba(153, 102, 255, 1)',
+//             'rgba(255, 159, 64, 1)',
+//             'rgba(0, 0, 0, 1)'
+//           ],
+//           borderWidth: 1
+//         }]
+//       };
 
-.counter {
-	padding: 5px;
-    margin-top: 1px;
-	text-align: center;
-	color: rgb(7, 7, 7);
-	border-radius: 10px;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
+//       // config
+//       const config = {
+//         type: 'bar',
+//         data,
+//         options: {
+//           plugins:{
+//            legend: {
+//              display: false
+//                    },
+//                 }
+//            }
+//       };
 
-.couner i {
-	font-size: 50px;
-}
-
-.card {
-	background: var(--main-bg-color);
-	color: var(--main-color);
-	border-radius: 10px;
-	margin-bottom: 10px;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-.card-header {
-	padding: 15px 30px;
-	border-bottom: 1px solid var(--second-bg-color);
-	position: relative;
-}
-
-.card-content {
-	padding: 20px;
-	overflow-x: auto;
-}
-
-table {
-	border-collapse: collapse;
-	width: 100%;
-}
-
-table td {
-	border-top: 1px solid var(--second-bg-color);
-	padding: 15px;
-}
-
-table th {
-	border-top: 1px solid var(--second-bg-color);
-	border-bottom: 1px solid var(--second-bg-color);
-	padding: 15px 12px;
-	text-align: left;
-}
-
-.dot i {
-	display: inline-block;
-	width: .385rem;
-	height: .385rem;
-	margin-right: .385rem;
-	vertical-align: middle;
-	border-radius: 50%;
-}
-
-
-
+//       // render init block
+//       const myChart = new Chart(
+//         document.getElementById('myChart'),
+//         config
+//       );
+// })
