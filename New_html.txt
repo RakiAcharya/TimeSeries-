@@ -1,0 +1,603 @@
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+   <script type="text/javascript">
+
+    Chart.defaults.global.responsive = false;
+
+    // defining the chart data
+    let data = {
+      labels : [{% for i in labels %}
+                 "{{i}}",
+                {% endfor %}],
+      datasets : [{
+          data : [{% for j in values %}
+                    {{j}},
+                  {% endfor %}],
+          backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+          borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+          borderWidth: 1
+
+      }]
+    }
+
+    let ctx = document.getElementById("myChart").getContext("2d");
+
+    // creating the chart using canvas
+    let myChart = new Chart(ctx, {
+      type: 'line',
+      data: data,
+
+      options: {
+        plugins:{
+           legend: {
+             display: false,
+             responsive: false
+                   },
+                }
+           }
+    });
+
+  </script>
+
+
+
+__________________________________________________________________________________________________
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet"  href="style.css">
+    <title>Document</title>
+
+  </head>
+  <body>
+      <div class="container">
+          <div class="navigation">
+              <ul>
+                  <li>
+                    <a href="#">
+                      <div class="icon"></div>
+                      <div class="title"><h2>Brand Name</h2></div>
+                     </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="icon"><ion-icon name="home-outline"></ion-icon></i></div>
+                      <div class="title">Dashboard</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"> 
+                      <div class="icon"><ion-icon name="person-circle-outline"></ion-icon></div>
+                      <div class="title">Customers</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="icon"><ion-icon name="information-circle-outline"></ion-icon></div>
+                      <div class="title">Help</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"> 
+                      <div class="icon"><ion-icon name="settings-outline"></ion-icon></div>
+                      <div class="title">Settings</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"> 
+                      <div class="icon"><ion-icon name="key-outline"></ion-icon></div>
+                      <div class="title">Password</div>
+                    </a>
+                  </li>
+                  <li>
+                   <a href="#"> 
+                      <div class="icon"><ion-icon name="log-out-outline"></ion-icon></div>
+                      <div class="title">SignOut</div>
+                    </a>
+                  </li>
+              </ul>
+          </div>
+          <div class="main">
+              <div class="topbar">
+                  <div class="toggle">
+                      <ion-icon name="menu-outline"></ion-icon>
+                  </div>
+              </div> 
+            <div class="GraphdBox">
+              <div class="box">
+                <div class="GName">From</div>
+                <form>
+                  <input class="form-control" type="datetime" placeholder="Select Date">
+                </form>
+              </div> 
+              <div class="box">
+                <div class="GName">To</div>   
+                <form>
+                  <input  class="form-control" type="datetime" placeholder="Select Date">
+                </form>
+              </div> 
+              <div class="box">
+                <div class="GName">Variable Name</div>   
+                <select class="select" name = "opt">
+                  <option value="Adam">Adam</option>
+                  <option value="SGD">SGD</option>
+                  <option value="Adadelta">Adadelta</option>
+                  <option value="Adagrad">Adagrad</option>
+                  <option value="Adamax">Adamax</option>
+                  <option value="Nadam">Nadam</option>
+                </select>
+              </div>
+             </div>
+             <div class="field space">
+              <div class="field">
+               <input type="submit" value="PLOT">
+              </div>
+             </div>
+             <div class="details">
+                 <div class="Graph">
+                    <div class="Chart-header">
+                      <h3>
+                        Chart
+                      </h3>
+                    </div>
+                    <div class="Chart-content">
+                      <canvas id="Chart3"></canvas>
+                    </div>
+                  </div>
+             </div>   
+        </div>     
+      
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="Chart.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script>
+          config={
+                  minDate: "2021.10.20",
+                  enableTime: true,
+                  dateFormat: "Y-m-d H:i:S",
+                  }
+          flatpickr("input[type=datetime]", config);
+        </script>
+
+
+
+
+        <script>
+          
+        let toggle=document.querySelector('.toggle');
+        let navigation=document.querySelector('.navigation');
+        let main=document.querySelector('.main');
+
+        toggle.onclick = function(){
+             navigation.classList.toggle('active')
+             main.classList.toggle('active')
+
+
+         }
+
+
+
+        let list= document.querySelectorAll(".navigation li " );
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item)=>
+        item.addEventListener('mouseover',activeLink));
+    </script>
+
+
+</body>
+</html>
+
+_________________________________________________________________________________________________________________
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Ubuntu',sans-serif;
+}
+:root{
+    --blue:#003147;
+    --white:#fff;
+    --grey:#f5f5f5;
+    --black1:#222;
+    --black2:#999;
+}
+
+
+
+
+body{
+    min-height: 100wh;
+    overflow-x: hidden;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+}
+
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background:var(--blue);
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    overflow:hidden ;
+
+}
+
+
+
+.navigation.active{
+    width: 80px;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+}
+
+.navigation ul li{
+    position: relative;
+    width: 200%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered
+{
+
+    background: aqua;
+
+}
+
+
+.navigation ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+
+
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hoered a
+{
+    color: var(--blue);
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+
+}
+.navigation ul li a .icon ion-icon{
+    font-size: 20px;
+
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap; 
+
+} 
+
+
+.main{
+    position: relative;
+    width: calc(100% -300px);
+    left: 300px;
+    min-height:100vh;
+    background: var(--white);
+    transition: 0.5s;
+
+}
+
+.main.active{
+    width: calc(100% -80px);
+    left:80px;
+
+
+
+}
+.topbar{
+
+    width:100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1px;
+
+}
+.toggle{
+    position: relative;
+    top:0;
+    width: 50px;
+    height: 60px;
+    background: var(--white);
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    font-size: 2.5em;
+}
+
+
+.toggle ion-icon{
+    color: #111;
+
+}
+
+.GraphdBox{
+
+position: relative;
+width:80%;
+padding: 20px;
+display: grid;
+grid-template-columns: 0.8fr 0.8fr 1fr;
+grid-gap: 20px;
+min-height: 100px;
+}
+
+.GraphdBox .box{
+    position: relative;
+    background: var(--white);
+    padding: 20px;
+    width: 95%;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08); 
+   
+}
+
+.GraphdBox .box .GName{
+    position: relative;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--blue);
+}
+
+
+
+.details{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+   
+}
+
+.details .recentOrders{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+
+}
+.cardHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.cardHeader h2{
+    font-weight: 600;
+    color: var(--blue);
+
+}
+.btn{
+    position: relative;
+    padding: 5px 10px;
+    background: var(--blue);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+
+
+}
+
+.details table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;  
+
+}
+.details table  thead td{
+    font-weight: 600;
+
+}
+
+.details .recentOrders table tr{
+    color: var(--black1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+
+.details .recentOrders table tr:last-child{
+
+    border-bottom: none;
+
+}
+
+.details .recentOrders table tr:hover{
+    background: var(--blue);
+    color: var(--white);
+}
+
+
+.details .recentOrders table tr td{
+    padding: 10px;
+}
+
+.details .recentOrders table tr td:last-child{
+    text-align: end;
+}
+
+.details .recentOrders table tr td:last-child(2){
+    text-align: end;
+}
+
+.details .recentOrders table tr td:last-child(3){
+    text-align: center;
+
+}
+.status.delivered{
+    padding: 2px 4px;
+    background: #8de02c;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+
+.Graph{
+position: relative;
+width:100%;
+padding: 20px;
+display: grid;
+}
+.Graph .Chart-content{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    width: 95%;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+   
+   
+}
+.Graph .Chart-content:hover{
+    background: var(--blue);
+}
+
+
+.select{
+
+
+    position: relative;
+    height: 25px;
+    width: 100%;
+    display: flex;
+    background: rgba(255,255,255,0.94);
+ 
+   
+ 
+ }
+ .select:focus,
+ .select:hover{
+    outline: none;
+    border: 1px solid #bbbbbb;
+ 
+ }
+ 
+ .select option{
+    background: #ffffff;
+ 
+ 
+ 
+ }
+
+
+
+ .field{
+    position: relative;
+    height: 25px;
+    width: 40%;
+    display: flex;
+    background: rgba(255,255,255,0.94);
+    margin-left: 25%;
+ 
+ }
+ .field span{
+    color: #222;
+    width: 30px;
+    line-height: 45px;
+ }     
+ 
+ .field input{
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border:none;
+    outline: none;
+    color: #222;
+    font-size: 16px;
+    font-family: 'Poppins',sans-serif;
+ 
+ }
+
+
+ input[type="submit"]{
+    background: #05090ce1;
+    border: 1px solid #d9af26;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    border-left: 100px;
+    font-family:  'Montserrat',sans-serif;
+ }
+ 
+ input[type="submit"]:hover{
+    background: #2691d9;
+    
+ 
+ }
