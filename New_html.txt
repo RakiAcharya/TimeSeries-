@@ -601,3 +601,51 @@ display: grid;
     
  
  }
+ --------------------------------------------------------------------------------------------------
+ var lineChart = new Chart(ctx, {
+	type: 'line',
+	data: data,
+	options: {
+        plugins: {
+          backgrounds: {
+            hbars: [{
+                from: 100,
+                to: 140,
+                color: "rgb(255,127,80)"
+              },
+              {
+                from: 50,
+                to: 100,
+                color: "rgb(255,165,0)"
+              },
+              {
+                from: 0,
+                to: 50,
+                color: "rgb(0, 230, 0)"
+              }
+            ]
+          }
+        }
+      },
+      plugins: [{
+        id: 'backgrounds',
+        beforeDraw: (chart, args, options) => {
+          const {
+            ctx,
+            chartArea,
+            scales: {
+              y
+            }
+          } = chart;
+    
+          options.hbars.forEach((hBar) => {
+            ctx.save();
+            ctx.fillStyle = hBar.color;
+            ctx.fillRect(chartArea.left, y.getPixelForValue(hBar.from), chartArea.right - chartArea.left, y.getPixelForValue(hBar.to) - y.getPixelForValue(hBar.from));
+            ctx.restore();
+          })
+        }
+      }]
+    
+})
+
