@@ -1,0 +1,3223 @@
+#Graph
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/New.css">
+    <title>Document</title>
+
+</head>
+<body>
+<div class="container">
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                    <div class="icon"></div>
+                    <div class="title"><h3>Predictive Analysis</h3></div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </div>
+                    <div class="title">Dashboard</div>
+                </a>
+            </li>
+            <!--            <li>-->
+            <!--                <a href="#">-->
+            <!--                    <div class="icon">-->
+
+            <!--                    </div>-->
+            <!--                    <div class="title">Forecast</div>-->
+            <!--                </a>-->
+            <!--            </li>-->
+            <li>
+                <a href="Pre">
+                    <div class="icon">
+                    </div>
+                    <div class="title">Prediction</div>
+                </a>
+            </li>
+                <li>
+                    <a href="Idle">
+                        <div class="icon">
+                        </div>
+                        <div class="title">IdleRunTime</div>
+                    </a>
+                </li>
+            <li>
+                <a href="PLOT">
+                    <div class="icon">
+                    </div>
+                    <div class="title">Plot</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                    </div>
+                    <div class="title">LogOut</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+        <ul>
+            <li class="next" ><a href="contact"><span></span></a></li>
+          </ul>
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+        </div>
+        <div class="GraphdBox">
+
+            <!--            <div class="box">-->
+            <!--                <div class="GName">Normal Machine Working Zone</div>-->
+            <!--                <canvas id="myChart"></canvas>-->
+            <!--            </div>-->
+            <div class="box">
+                <div class="GName">Machine Name</div>
+            </div>
+        </div>
+        <div class="details">
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Machine Details</h2>
+               
+                  
+                </div>
+                <table>
+                    <thead>
+                    <tr>
+                      
+                        <td>Parameter</td>
+                        <td>Present Value</td>
+                        <td>Zone</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        
+                        <td>Spindle_Power(%)</td>
+                        <td>4</td>
+                        <td ><span id="zone">5</span></td>
+                    </tr>
+                    <tr>
+                        
+                        <td>Spindle_Motor_Temperature(degC)</td>
+                        <td>5</td>
+                        <td><span class="status delivered">Safe</span></td>
+                    </tr>
+                    <tr>
+                        
+                        <td>Spindle_Front_Bearing_Temperature(degC)</td>
+                        <td>6</td>
+                        <td><span class="status delivered">Safe</span></td>
+                    </tr>
+                    <tr>
+                       
+                        <td>Spindle_Rear_Bearing_Temperature(degC)</td>
+                        <td>6</td>
+                        <td><span class="status delivered">Safe</span></td>
+                    <tr>
+                       
+                        <td>Spindle_Chiller_Temperature(degC)</td>
+                        <td>7</td>
+                        <td><span class="status delivered">Safe</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Machine Details</h2>
+                  
+                </div>
+                <table>
+                    <thead>
+                    <tr>
+                      
+                        <td>Parameter</td>
+                        <td>Present Value</td>
+                        <td>Zone</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        
+                        <td>1</td>
+                        <td>34</td>
+                        <td><span class="status delivered">Safe</span></td>
+                    </tr>
+                    <tr>
+                        
+                        <td>2</td>
+                        <td>6</td>
+                        <td><span class="status delivered">Safe</span></td>
+                    </tr>
+                    <tr>
+                        
+                        <td>3</td>
+                        <td>6</td>
+                        <td><span class="status delivered">Safe</span></td>
+                    </tr>
+                    <tr>
+                       
+                        <td>6</td>
+                        <td>7</td>
+                        <td><span class="status delivered">Safe</span></td>
+                    <tr>
+                       
+                        <td>6</td>
+                        <td>7</td>
+                        <td><span class="status delivered">Safe</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div> -->
+        </div>
+        <div class="Graph">
+            <div class="Chart-header">
+                <h3>
+
+                    Spindle_Power(%)
+                    
+                  
+                </h3>
+            </div>
+            
+            <div class="Chart-content">
+
+                <canvas id="Chart1"></canvas>
+            </div>
+        </div>
+        <div class="Graph">
+            <div class="Chart-header">
+                <h3>
+
+                    Spindle_Power(%)
+                    
+                  
+                </h3>
+            </div>
+            
+            <div class="Chart-content">
+
+                <canvas id="Chart2"></canvas>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../static/applycolour.js"></script>
+<script type="text/javascript">
+
+    // defining the chart data
+    let New_data1 = {
+      labels : [{% for i in df["Date"] %}
+                 "{{i}}",
+                {% endfor %}],
+
+      datasets : [{
+          data : [{% for j in df["Spindle_Power(%)"] %}
+                    {{j}},
+                  {% endfor %}],
+          borderWidth: 2,
+		  lineTension: 0,
+		  label: 'View',
+        borderColor: "#2600ff",
+        backgroundColor: "rgba(255, 206, 86, 0.2)"
+
+
+
+
+       
+      },{ data : [{% for j in df["Spindle_Motor_Temperature(degC)"] %}
+                    {{j}},
+                  {% endfor %}],
+                 
+
+          borderWidth: 2,
+		  lineTension: 0,
+		  label: 'LOCAL',
+        borderColor: "#2600ff",
+       
+      }]
+    };
+
+    const My_Range={
+        id:"My_Range",
+        beforeDraw(chart,args,options){
+            const {ctx,chartArea:{top,bottom,left,right,width,heigt},
+              scales:{x,y}}=chart;
+            ctx.save();
+            ctx.strokeStyle="blue";
+            ctx.strokeRect(left,y.getPixelForValue(30),width,0);
+            ctx.restore();
+            ctx.fillStyle="rgba(0,0,200,0.2)";
+            ctx.fillRect(left,top,width,y.getPixelForValue(30)-top);
+
+            ctx.strokeStyle="red";
+            ctx.strokeRect(left,y.getPixelForValue(20),width,0);
+          
+            ctx.restore();
+            ctx.fillStyle="rgba(200,0,0,0.2)";
+            ctx.fillRect(left,y.getPixelForValue(30),width,bottom-y.getPixelForValue(20));
+            
+            ctx.strokeStyle="green";
+            ctx.strokeRect(left,y.getPixelForValue(10),width,0);
+          
+            ctx.restore();
+            ctx.fillStyle="rgba(0,200,0,0.2)";
+            ctx.fillRect(right,bottom,width,y.getPixelForValue(20));
+            
+           
+
+
+
+
+
+        }
+    };
+
+
+
+    // config 
+    const config = {
+      type: 'line',
+      data: New_data1,
+      options: {
+        maintainAspectRatio: false,
+		bezierCurve: false,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      },
+      plugins:[My_Range]
+    };
+
+    // render init block
+    const myChart = new Chart(
+      document.getElementById('Chart1'),
+      config
+    );
+
+
+
+
+</script>
+<script type="text/javascript">
+
+// defining the chart data
+let New_data2= {
+  labels : [{% for i in df["Date"] %}
+             "{{i}}",
+            {% endfor %}],
+
+  datasets : [{
+      data : [{% for j in df["Spindle_Power(%)"] %}
+                {{j}},
+              {% endfor %}],
+      borderWidth: 2,
+      lineTension: 0,
+      label: 'View',
+    borderColor: "#2600ff",
+    backgroundColor: "rgba(255, 206, 86, 0.2)"
+
+
+
+
+   
+  },{ data : [{% for j in df["Spindle_Motor_Temperature(degC)"] %}
+                {{j}},
+              {% endfor %}],
+             
+
+      borderWidth: 2,
+      lineTension: 0,
+      label: 'LOCAL',
+    borderColor: "#2600ff",
+   
+  }]
+};
+
+const My_Range1={
+    id:"My_Range1",
+    beforeDraw(chart,args,options){
+        const {ctx,chartArea:{top,bottom,left,right,width,heigt},
+          scales:{x,y}}=chart;
+        ctx.save();
+        ctx.strokeStyle="blue";
+        ctx.strokeRect(left,y.getPixelForValue(30),width,0);
+        ctx.restore();
+        ctx.fillStyle="rgba(0,0,200,0.2)";
+        ctx.fillRect(left,top,width,y.getPixelForValue(30)-top);
+
+        ctx.strokeStyle="red";
+        ctx.strokeRect(left,y.getPixelForValue(20),width,0);
+      
+        ctx.restore();
+        ctx.fillStyle="rgba(200,0,0,0.2)";
+        ctx.fillRect(left,y.getPixelForValue(30),width,y.getPixelForValue(40)-top);
+        
+        ctx.strokeStyle="green";
+        ctx.strokeRect(left,y.getPixelForValue(10),width,0);
+      
+        ctx.restore();
+        ctx.fillStyle="rgba(0,200,0,0.2)";
+        ctx.fillRect(left,y.getPixelForValue(20),width,y.getPixelForValue(30)-top);
+        
+       
+
+
+
+
+
+    }
+};
+
+
+
+// config 
+const config1 = {
+  type: 'line',
+  data: New_data2,
+  options: {
+    maintainAspectRatio: false,
+    bezierCurve: false,
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  },
+  plugins:[My_Range1]
+};
+
+// render init block
+const myChart1 = new Chart(
+  document.getElementById('Chart2'),
+  config1
+);
+
+
+
+
+</script>
+
+
+<script type="text/javascript" src="../static/vanilla-tilt.js"></script>
+  <script>VanillaTilt.init(document.querySelectorAll(".navigation"), {
+		max: 25,
+		speed: 400,
+    glare: true,
+    "max-glare":1,
+	});
+  </script>
+
+
+  
+
+</body>
+</html>
+
+
+
+______________________________________________________________________________________________________________________________________________________________
+#Frist Page
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="New.css">
+    <title>Document</title>
+
+</head>
+<body>
+<div class="container">
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                    <div class="icon"></div>
+                    <div class="title"><h3>Predictive Analysis</h3></div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </div>
+                    <div class="title">Dashboard</div>
+                </a>
+            </li>
+            <!--            <li>-->
+            <!--                <a href="#">-->
+            <!--                    <div class="icon">-->
+
+            <!--                    </div>-->
+            <!--                    <div class="title">Forecast</div>-->
+            <!--                </a>-->
+            <!--            </li>-->
+            <li>
+                <a href="Pre">
+                    <div class="icon">
+                    </div>
+                    <div class="title">Prediction</div>
+                </a>
+            </li>
+                <li>
+                    <a href="Idle">
+                        <div class="icon">
+                        </div>
+                        <div class="title">IdleRunTime</div>
+                    </a>
+                </li>
+            <li>
+                <a href="PLOT">
+                    <div class="icon">
+                    </div>
+                    <div class="title">Plot</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                    </div>
+                    <div class="title">LogOut</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+        <ul>
+            <li class="next" ><a href="contact"><span></span></a></li>
+          </ul>
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+        </div>
+        <div class="GraphdBox">
+
+            <!--            <div class="box">-->
+            <!--                <div class="GName">Normal Machine Working Zone</div>-->
+            <!--                <canvas id="myChart"></canvas>-->
+            <!--            </div>-->
+            <div class="box">
+                <div class="GName">Machine Name</div>
+            </div>
+        </div>
+        <div class="details">
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Machine Details</h2>
+               
+                  
+                </div>
+                <table>
+                    <thead>
+                    <tr>
+                      
+                        <td>Parameter</td>
+                        <td>Present Value</td>
+                        <td>Zone</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        
+                        <td>Spindle_Power(%)</td>
+                        <td>{{'%0.2f'|format(df["spindlePower"][0]|float)}}</td>
+                        <td ><span id="zone">5</span></td>
+                    </tr>
+                    <tr>
+                        
+                        <td>Spindle_Motor_Temperature(degC)</td>
+                        <td>{{'%0.2f'|format(df["spindleMotorTemperature"][0]|float)}}</td>
+                        <td><span class="status delivered">Safe</span></td>
+                    </tr>
+                    <tr>
+                        
+                        <td>Spindle_Front_Bearing_Temperature(degC)</td>
+                        <td>{{'%0.2f'|format(df["spindleFrontBearingTemperature"][0]|float)}}</td>
+                        <td><span class="status delivered">Safe</span></td>
+                    </tr>
+                    <tr>
+                       
+                        <td>Spindle_Rear_Bearing_Temperature(degC)</td>
+                        <td>{{'%0.2f'|format(df["spindleRearBearingTemperature"][0]|float)}}</td>
+                        <td><span class="status delivered">Safe</span></td>
+                    <tr>
+                       
+                        <td>Spindle_Chiller_Temperature(degC)</td>
+                        <td>{{'%0.2f'|format(df["spindleChillerTemperature"][0]|float)}}</td>
+                        <td><span class="status delivered">Safe</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Machine Details</h2>
+                  
+                </div>
+                <table>
+                    <thead>
+                    <tr>
+                      
+                        <td>Parameter</td>
+                        <td>Present Value</td>
+                        <td>Zone</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        
+                        <td>1</td>
+                        <td>34</td>
+                        <td><span class="status delivered">Safe</span></td>
+                    </tr>
+                    <tr>
+                        
+                        <td>2</td>
+                        <td>6</td>
+                        <td><span class="status delivered">Safe</span></td>
+                    </tr>
+                    <tr>
+                        
+                        <td>3</td>
+                        <td>6</td>
+                        <td><span class="status delivered">Safe</span></td>
+                    </tr>
+                    <tr>
+                       
+                        <td>6</td>
+                        <td>7</td>
+                        <td><span class="status delivered">Safe</span></td>
+                    <tr>
+                       
+                        <td>6</td>
+                        <td>7</td>
+                        <td><span class="status delivered">Safe</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div> -->
+        </div>
+        <div class="Graph">
+            <div class="Chart-header">
+                <h3>
+                    Spindle_Power(%)
+                </h3>
+            </div>
+            <div class="Chart-content">
+                <canvas id="Chart1"></canvas>
+            </div>
+        </div>
+        <div class="Graph">
+            <div class="Chart-header">
+                <h3>
+                    Spindle_Motor_Temperature(degC)
+                </h3>
+            </div>
+            <div class="Chart-content">
+                <canvas id="Chart2"></canvas>
+            </div>
+        </div>
+        <div class="Graph">
+            <div class="Chart-header">
+                <h3>
+                    Spindle_Front_Bearing_Temperature(degC)
+                </h3>
+            </div>
+            <div class="Chart-content">
+                <canvas id="Chart3"></canvas>
+            </div>
+        </div>
+        <div class="Graph">
+            <div class="Chart-header">
+                <h3>
+                    Spindle_Rear_Bearing_Temperature(degC)
+                </h3>
+            </div>
+            <div class="Chart-content">
+                <canvas id="Chart4"></canvas>
+            </div>
+        </div>
+        <div class="Graph">
+            <div class="Chart-header">
+                <h3>
+                    Spindle_Chiller_Temperature(degC)
+                </h3>
+            </div>
+            <div class="Chart-content">
+                <canvas id="Chart5"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script src="applycolour.js"></script>
+<!--<script type="text/javascript">-->
+
+<!--    // defining the chart data-->
+<!--    let data = {-->
+<!--      labels : [{% for i in labels %}-->
+<!--                 "{{i}}",-->
+<!--                {% endfor %}],-->
+
+<!--      datasets : [{-->
+<!--          data : [{% for j in values %}-->
+<!--                    {{j}},-->
+<!--                  {% endfor %}],-->
+
+<!--          borderColor: [-->
+<!--                'rgba(255, 206, 86, 1)',-->
+<!--                'rgba(255, 206, 86, 1)',-->
+<!--                'rgba(255, 206, 86, 1)',-->
+<!--                'rgba(255, 206, 86, 1)',-->
+<!--                'rgba(255, 206, 86, 1)',-->
+<!--                'rgba(255, 206, 86, 1)'-->
+<!--            ],-->
+<!--             backgroundColor: [-->
+<!--             'rgba(0, 255, 0, 0.5)',-->
+<!--             'rgba(0, 255, 0, 0.5)',-->
+<!--             'rgba(0, 255, 0, 0.5)',-->
+<!--             'rgba(0, 255, 0, 0.5)',-->
+<!--             'rgba(0, 255, 0, 0.5)',-->
+<!--             'rgba(0, 255, 0, 0.5)',-->
+<!--             'rgba(0, 255, 0, 0.5)',-->
+<!--             'rgba(0, 255, 0, 0.5)',-->
+<!--             'rgba(0, 255, 0, 0.5)'-->
+<!--           ],-->
+<!--          borderWidth: 1,-->
+
+<!--		label: 'Safe-Zone',-->
+
+
+<!--      }]-->
+<!--    }-->
+
+<!--    let ctx = document.getElementById("myChart").getContext("2d");-->
+
+<!--    // creating the chart using canvas-->
+<!--    let myChart = new Chart(ctx, {-->
+<!--      type: 'bar',-->
+<!--      data: data,-->
+
+<!--      options: {-->
+<!--        plugins:{-->
+<!--           legend: {-->
+<!--             display: false,-->
+<!--             responsive: false-->
+<!--                  },-->
+<!--                }-->
+<!--           }-->
+<!--    });-->
+
+
+
+<!--</script>-->
+
+
+<script type="text/javascript">
+
+    // defining the chart data
+    let New_data1 = {
+      labels : [{% for i in df["Date"] %}
+                 "{{i}}",
+                {% endfor %}],
+
+      datasets : [{
+          data : [{% for j in df["spindlePower"] %}
+                    {{j}},
+                  {% endfor %}],
+          borderWidth: 2,
+          borderColor: '#6ab04c',
+		  lineTension: 0,
+		  label: 'View',
+      }]
+    }
+
+
+    let ctx1 = document.getElementById("Chart1").getContext("2d");
+    ctx1.height = 100
+    ctx1.width = 100
+
+    // creating the chart using canvas
+    let Chart1 = new Chart(ctx1, {
+      type: 'line',
+      data: New_data1,
+
+      options: {
+		maintainAspectRatio: false,
+		bezierCurve: false,
+	    }
+
+    });
+
+
+
+</script>
+
+<script type="text/javascript">
+
+    // defining the chart data
+    let New_data2 = {
+      labels : [{% for i in df["Date"] %}
+                 "{{i}}",
+                {% endfor %}],
+
+      datasets : [{
+          data : [{% for j in df["spindleMotorTemperature"] %}
+                    {{j}},
+                  {% endfor %}],
+          borderWidth: 2,
+          borderColor: '#6ab04c',
+		  lineTension: 0,
+		  label: 'View',
+
+      }]
+    }
+
+
+    let ctx2 = document.getElementById("Chart2").getContext("2d");
+    ctx2.height = 100
+    ctx2.width = 100
+
+    // creating the chart using canvas
+    let Chart2 = new Chart(ctx2, {
+      type: 'line',
+      data: New_data2,
+
+      options: {
+		maintainAspectRatio: false,
+		bezierCurve: false,
+	    }
+
+
+    });
+
+
+
+</script>
+
+
+<script type="text/javascript">
+
+    // defining the chart data
+    let New_data3 = {
+      labels : [{% for i in df["Date"] %}
+                 "{{i}}",
+                {% endfor %}],
+
+      datasets : [{
+          data : [{% for j in df["spindleFrontBearingTemperature"] %}
+                    {{j}},
+                  {% endfor %}],
+          borderWidth: 2,
+          borderColor: '#6ab04c',
+		  lineTension: 0,
+		  label: 'View',
+
+      }]
+    }
+
+
+    let ctx3 = document.getElementById("Chart3").getContext("2d");
+    ctx3.height = 100
+    ctx3.width = 100
+
+    // creating the chart using canvas
+    let Chart3 = new Chart(ctx3, {
+      type: 'line',
+      data: New_data3,
+
+      options: {
+		maintainAspectRatio: false,
+		bezierCurve: false,
+	    }
+
+
+    });
+
+
+
+</script>
+<script type="text/javascript">
+
+    // defining the chart data
+    let New_data4 = {
+      labels : [{% for i in df["Date"] %}
+                 "{{i}}",
+                {% endfor %}],
+
+      datasets : [{
+          data : [{% for j in df["spindleRearBearingTemperature"] %}
+                    {{j}},
+                  {% endfor %}],
+          borderWidth: 2,
+          borderColor: '#6ab04c',
+		  lineTension: 0,
+		  label: 'View',
+
+      }]
+    }
+
+
+    let ctx4 = document.getElementById("Chart4").getContext("2d");
+    ctx4.height = 100
+    ctx4.width = 100
+
+    // creating the chart using canvas
+    let Chart4 = new Chart(ctx4, {
+      type: 'line',
+      data: New_data4,
+
+      options: {
+		maintainAspectRatio: false,
+		bezierCurve: false,
+	    }
+
+
+    });
+
+
+
+</script>
+<script type="text/javascript">
+
+    // defining the chart data
+    let New_data5 = {
+      labels : [{% for i in df["Date"] %}
+                 "{{i}}",
+                {% endfor %}],
+
+      datasets : [{
+          data : [{% for j in df["spindleChillerTemperature"] %}
+                    {{j}},
+                  {% endfor %}],
+          borderWidth: 2,
+          borderColor: '#6ab04c',
+		  lineTension: 0,
+		  label: 'View',
+
+      }]
+    }
+
+
+    let ctx5 = document.getElementById("Chart5").getContext("2d");
+    ctx5.height = 100
+    ctx5.width = 100
+
+    // creating the chart using canvas
+    let Chart5 = new Chart(ctx5, {
+      type: 'line',
+      data: New_data5,
+
+      options: {
+		maintainAspectRatio: false,
+		bezierCurve: false,
+	    }
+
+
+    });
+
+
+
+</script>
+
+<script>
+
+        let toggle=document.querySelector('.toggle');
+        let navigation=document.querySelector('.navigation');
+        let main=document.querySelector('.main');
+
+        toggle.onclick = function(){
+             navigation.classList.toggle('active')
+             main.classList.toggle('active')
+
+
+         }
+
+
+
+        let list= document.querySelectorAll(".navigation li " );
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item)=>
+        item.addEventListener('mouseover',activeLink));
+
+
+
+
+</script>
+
+<script type="text/javascript" src="vanilla-tilt.js"></script>
+  <script>VanillaTilt.init(document.querySelectorAll(".navigation"), {
+		max: 25,
+		speed: 400,
+    glare: true,
+    "max-glare":1,
+	});
+  </script>
+
+
+  
+
+</body>
+</html>
+
+
+
+____________________________________________________________________________________________________________________________________________________________
+
+#First css
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+:root{
+    --blue:#003147;
+    --white:#fff;
+    --grey:#f5f5f5;
+    --black1:#222;
+    --black2:#999;
+}
+
+
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    background: #161623;
+    /* min-width: 100%; */
+   
+
+}
+
+
+.container{
+    height: 100vh;
+    width: 100%;
+    padding-right: 3%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.navigation{
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    box-shadow: 20px,20px,50px rgba(0,0,0,0.5);
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style:inset;
+    border-left-color: #1996fc;
+    border-bottom-color:#1996fc;
+    border-top-color: #f0f;
+    border-right-color: #f0f;
+    backdrop-filter: blur(5px);
+    transition: 0.5s;
+    overflow:hidden ;
+
+}
+
+
+
+.navigation.active{
+    width: 80px;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+}
+
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered
+{
+
+    background: var(--white);
+
+}
+
+
+.navigation ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+
+
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a
+{
+    color: var(--blue);
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+
+}
+.navigation ul li a .icon ion-icon{
+    font-size: 20px;
+
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+
+}
+
+
+
+
+.main{
+    position: relative;
+    width: calc(100% -255px);
+    left: 255px;
+    min-height:100vh;
+    box-shadow: 20px,20px,50px rgba(0,0,0,0.5);
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    border-style:outset;
+    border-style:inset;
+    border-left-color: #1996fc;
+    border-bottom-color:#1996fc;
+    border-top-color: #f0f;
+    border-right-color: #f0f;
+    backdrop-filter: blur(2px);
+    transition: 0.5s;
+
+}
+
+.main.active{
+    width: calc(100% -80px);
+    left:80px;
+
+
+
+}
+.topbar{
+
+    width:100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1px;
+
+}
+.toggle{
+    position: relative;
+    top:0;
+    width: 50px;
+    height: 60px;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    font-size: 2.5em;
+}
+
+
+.toggle ion-icon{
+    color: var(--white);
+
+}
+
+
+.GraphdBox{
+
+    position: relative;
+    width:50%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 0.4fr;
+    grid-gap: 30px;
+    min-height: 100px;
+
+    }
+    
+    .GraphdBox .box{
+        position: relative;
+       
+        padding: 20px;
+        width: 95%;
+        border-radius: 20px;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #0f0;
+        background:rgb(0, 0, 0);
+    
+    }
+    
+    .GraphdBox .box .GName{
+        position: relative;
+        font-size: 1.5em;
+        font-weight: 500;
+        color: var(--white);
+    }
+    
+    
+    
+    
+    
+
+
+.details{
+    position: relative;
+    width: 94%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap:10px;
+    align-items: center;
+   
+}
+
+.details .recentOrders{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    padding: 20px;
+    background: linear-gradient(rgb(36, 56, 59),rgba(31, 31, 31, 0.753));
+    border-radius: 30px;
+    box-shadow:  0 0 10px rgba(255, 0, 0, 0.952);
+ 
+   
+ 
+
+}    
+
+
+
+.cardHeader h2{
+    font-weight: 600;
+    color: snow
+
+}
+
+
+
+
+.details table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+
+}
+.details table  thead td{
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    background: skyblue
+    
+
+}
+
+.details .recentOrders table tr{
+    color: var(--white);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+
+.details .recentOrders table tr:last-child{
+
+    border-bottom: none;
+
+}
+
+.details .recentOrders table tr:hover{
+    background: var(--white);
+    color: #000;
+}
+
+
+.details .recentOrders table tr td{
+    padding: 10px;
+}
+
+.details .recentOrders table tr td:last-child{
+    text-align: end;
+}
+
+.details .recentOrders table tr td:last-child(2){
+    text-align: end;
+}
+
+.details .recentOrders table tr td:last-child(3){
+    text-align: center;
+
+}
+.status.delivered{
+    padding: 2px 4px;
+    background: #8de02c;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+
+
+
+
+.Graph{
+position: relative;
+width:94%;
+padding: 20px;
+display: grid;
+
+}
+.Graph .Chart-content{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    width: 95%;
+    border-radius: 30px;
+    box-shadow:  0 0 10px rgb(25, 0, 255);
+   
+
+
+
+
+}
+.Graph .Chart-content:hover{
+    background: var(--blue);
+}
+.Graph .Chart-header h3{
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0.5px 5px rgb(34, 14, 252);
+}
+
+
+.main ul
+{
+    position:fixed;
+    top:2%;
+    left:72%;
+    transform: translate(50%,-50%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main ul li{
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    background: #262626;
+    margin: 0 10px;
+    border-radius: 50px;
+    transition: .5s;
+
+}
+.main ul li:hover{
+    background: #0070ff;
+}
+
+.main ul li span{
+   position: absolute;
+   width: 20px;
+   height:20px;
+   border:4px solid #fff;
+   transition: .5s;
+
+}
+.main ul li.next span{
+    top:50%;
+    right: 20%;
+    transform: translateY(-50%) rotate(-45deg);
+    border-left: none;
+    border-top: none;
+}
+
+.main ul li.next:hover span{
+    right: 16%;
+}
+
+.main ul li.next span:before{
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 4px;
+    background: #fff;
+    transform-origin: right;
+    transform: rotate(45deg) translate(6px,18px) scaleX(0);
+    transition: .5s;
+}
+.main ul li.next:hover span:before
+{
+    transform: rotate(45deg) translate(6px,18px) scaleX(1);  
+} 
+
+
+
+
+/* ul
+{
+    position:absolute;
+    top:10%;
+    left:5%;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+ul li{
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    background: #262626;
+    margin: 0 10px;
+    border-radius: 50px;
+    transition: .5s;
+
+}
+ul li:hover{
+    background: #ff5e00;
+}
+
+ul li span{
+   position: absolute;
+   width: 20px;
+   height:20px;
+   border:4px solid #fff;
+   transition: .5s;
+
+}
+ul li.prev span{
+    top:50%;
+    left: 20%;
+    transform: translateY(-50%) rotate(-45deg);
+    border-right: none;
+    border-bottom: none;
+}
+
+ul li.prev:hover span{
+    left: 16%;
+}
+
+ul li.prev span:before{
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 4px;
+    background: #fff;
+    transform-origin: left;
+    transform: rotate(45deg) translate(-2px,-1px) scaleX(0);
+    transition: .5s;
+}
+ul li.prev:hover span:before
+{
+    transform: rotate(45deg) translate(-2px,-1px) scaleX(1);  
+} */
+
+
+_____________________________________________________________________________________________________________________________________________________________
+
+#colour to table
+
+var Values = document.getElementById("zone").innerHTML;
+var span=document.getElementById("zone")
+if (Values < 10) {
+    span.style.background= "#8de02c";
+    span.style.color="black";
+    span.style.font = "14px";
+    span.borderradius= "4px";
+    document.getElementById("zone").innerHTML = "Safe";
+ 
+
+  } else if (Values < 20) {
+    span.style.color = "orenge";
+  } else {
+    span.style.color = "red";
+  }
+
+______________________________________________________________________________________________________________________________________________________________
+#Second Page(pre)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="second.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+<form method="POST" action="{{url_for('Predict')}}" enctype="multipart/form-data">
+
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href='#'>
+                        <div class="icon"></div>
+                        <div class="title"><h3>Predictive Analysis</h3></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="Home">
+                        <div class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </div>
+                        <div class="title">Dashboard</div>
+                    </a>
+                </li>
+                <!--            <li>-->
+                <!--                <a href="#">-->
+                <!--                    <div class="icon">-->
+
+                <!--                    </div>-->
+                <!--                    <div class="title">Forecast</div>-->
+                <!--                </a>-->
+                <!--            </li>-->
+                <li>
+                    <a href="Pre">
+                        <div class="icon">
+
+                        </div>
+                        <div class="title">Prediction</div>
+                    </a>
+                </li>
+               <li>
+                   <a href="Idle">
+                            <div class="icon">
+
+                            </div>
+                            <div class="title">IdleRunTime</div>
+                        </a>
+                    </li>
+                <li>
+                    <a href="PLOT">
+                        <div class="icon">
+
+                        </div>
+                        <div class="title">Plot</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </div>
+                        <div class="title">LogOut</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="GraphdBox">
+                <!--                <div class="box">-->
+                <!--                    <div class="GName">From</div>-->
+
+                <!--                    <input class="form-control" type="datetime" placeholder="Select Date" id="FROM" name="FROM">-->
+                <!--                </div>-->
+                <!--                <div class="box">-->
+                <!--                    <div class="GName">TO</div>-->
+
+                <!--                    <input class="form-control" type="datetime" placeholder="Select Date" id="TO" name="TO">-->
+                <!--                </div>-->
+                <div class="box">
+                    <div class="GName">Machine Name</div>
+                    <select class="select" name="machines" id="main_menu">
+                        <option>Select Machine Name</option>
+                        <option value="modig">MODIG</option>
+                        <option value="dmu">DMG-DMU(85)</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <div class="GName">Variable Name</div>
+                    <select class="select" id="sub_menu"  name="variable">
+                        <option>Select Parameter</option> 
+                    </select>
+                </div>
+            </div>
+            <div class="field space">
+                <div class="field">
+                    <input type="submit" value="Forecast">
+                </div>
+            </div>
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h3>Variable Name: {{Name}}</h3>
+
+                    </div>
+                    <table>
+                        <thead>
+                        <tr>
+                            <td>Date</td>
+                            <td>Forecasted Values</td>
+                            <!--                            <td>Forecasted Values</td>-->
+                            <!--                            <td>Zone</td>-->
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>{{df.index[0]}}</td>
+                            <td>{{'%0.2f'|format(df["Forecast"][0]|float)}}</td>
+
+                        </tr>
+                        <tr>
+                            <td>{{df.index[1]}}</td>
+                            <td>{{'%0.2f'|format(df["Forecast"][1]|float)}}</td>
+
+                        </tr>
+                        <tr>
+                            <td>{{df.index[2]}}</td>
+                            <td>{{'%0.2f'|format(df["Forecast"][2]|float)}}</td>
+
+                        </tr>
+                        <tr>
+                            <td>{{df.index[3]}}</td>
+                            <td>{{'%0.2f'|format(df["Forecast"][3]|float)}}</td>
+
+                        <tr>
+                            <td>{{df.index[4]}}</td>
+                            <td>{{'%0.2f'|format(df["Forecast"][4]|float)}}</td>
+
+                        </tr>
+                        <tr>
+                            <td>{{df.index[5]}}</td>
+                            <td>{{'%0.2f'|format(df["Forecast"][5]|float)}}</td>
+
+                        </tr>
+                        <tr>
+                            <td>{{df.index[6]}}</td>
+                            <td>{{'%0.2f'|format(df["Forecast"][6]|float)}}</td>
+
+                        </tr>
+                        <tr>
+                            <td>{{df.index[7]}}</td>
+                            <td>{{'%0.2f'|format(df["Forecast"][7]|float)}}</td>
+
+                        </tr>
+                        <tr>
+                            <td>{{df.index[8]}}</td>
+                            <td>{{'%0.2f'|format(df["Forecast"][8]|float)}}</td>
+
+                        </tr>
+                        <tr>
+                            <td>{{df.index[9]}}</td>
+                            <td>{{'%0.2f'|format(df["Forecast"][9]|float)}}</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h3>Graph</h3>
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div class="Graph">
+                    <div class="Chart-header">
+                        <h3>
+                            Spindle_Power(%)
+                        </h3>
+                    </div>
+                    <div class="Chart-content">
+                        <canvas id="Chart1"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+     
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src='dynamic.js'></script> 
+    <script>
+          config={
+                  minDate: "2021.07.23",
+                  enableTime: true,
+                  dateFormat: "Y-m-d H:i:S",
+                  }
+          flatpickr("input[type=datetime]", config);
+
+
+
+
+    </script>
+
+
+    <script>
+
+        let toggle=document.querySelector('.toggle');
+        let navigation=document.querySelector('.navigation');
+        let NEW=document.querySelector('.main');
+
+        toggle.onclick = function(){
+             navigation.classList.toggle('active')
+             NEW.classList.toggle('active')
+
+
+         }
+
+
+
+        let list= document.querySelectorAll(".navigation li " );
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item)=>
+        item.addEventListener('mouseover',activeLink));
+
+
+
+
+    </script>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script>VanillaTilt.init(document.querySelectorAll(".navigation"), {
+          max: 25,
+          speed: 400,
+      glare: true,
+      "max-glare":1,
+      });
+    </script>
+
+    <script>
+        var machines={
+    modig:["bert-base-uncased","bert-large-uncased","bert-base-cased",],
+    dmu:["openai-gpt"],
+    
+}
+
+var main=document.getElementById("main_menu");
+var sub=document.getElementById("sub_menu");
+
+
+
+
+main.addEventListener('change',function(){
+
+    var selected_option=machines[this.value];
+
+while(sub.options.length >0){
+    sub.options.remove(0);
+}
+
+
+Array.from(selected_option).forEach(function(el){
+    let option =new Option(el, el);
+    sub.appendChild(option);
+
+});
+
+})
+    </script>
+
+</form>
+</body>
+
+</html>
+_____________________________________________________________________________________________________________________________________________________________
+
+#second css
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*
+*{
+margin: 0%;
+padding: 0%;
+font-family: 'Ubuntu',sans-serif;
+}
+:root{
+--blue:#003147;
+--white:#fff;
+--grey:#f5f5f5;
+--black1:#222;
+--black2:#999;
+}
+
+
+
+
+body{
+justify-content: center;
+align-items: center;
+min-height: 100%;
+background: #161623;
+}
+
+.container{
+height: 100vh;
+width: 100%;
+padding-right: 3%;
+box-sizing: border-box;
+position: relative;
+}
+
+.navigation{
+position: fixed;
+width: 250px;
+height: 100%;
+box-shadow: 20px,20px,50px rgba(0,0,0,0.5);
+background: rgba(255,255,255,0.1);
+border-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-style:inset;
+border-left-color: #1996fc;
+border-bottom-color:#1996fc;
+border-top-color: #f0f;
+border-right-color: #f0f;
+backdrop-filter: blur(5px);
+transition: 0.5s;
+overflow:hidden ;
+
+}
+
+
+
+.navigation.active{
+width: 80px;
+}
+
+.navigation ul{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+
+}
+
+.navigation ul li{
+position: relative;
+width: 200%;
+list-style: none;
+border-top-left-radius: 30px;
+border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered
+{
+
+background: var(--white);
+
+}
+
+
+.navigation ul li:nth-child(1){
+margin-bottom: 40px;
+pointer-events: none;
+}
+
+
+.navigation ul li a{
+position: relative;
+display: block;
+width: 100%;
+display: flex;
+text-decoration: none;
+color: #fff;
+
+
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a
+{
+color: var(--blue);
+}
+
+.navigation ul li a .icon{
+position: relative;
+display: block;
+min-width: 60px;
+height: 60px;
+line-height: 70px;
+text-align: center;
+
+}
+.navigation ul li a .icon ion-icon{
+font-size: 20px;
+
+}
+
+.navigation ul li a .title{
+position: relative;
+display: block;
+padding: 0 10px;
+height: 60px;
+line-height: 60px;
+text-align: start;
+white-space: nowrap;
+
+}
+
+.main{
+position: relative;
+width: calc(100% -255px);
+left: 255px;
+min-height:100vh;
+box-shadow: 20px,20px,50px rgba(0,0,0,0.5);
+background: rgba(255,255,255,0.1);
+border-radius: 10px;
+border-style:outset;
+border-style:inset;
+border-left-color: #1996fc;
+border-bottom-color:#1996fc;
+border-top-color: #f0f;
+border-right-color: #f0f;
+backdrop-filter: blur(2px);
+transition: 0.5s;
+
+}
+
+.main.active{
+width: calc(100% -80px);
+left:80px;
+
+
+
+}
+.topbar{
+
+width:100%;
+height: 60px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 1px;
+
+}
+.toggle{
+position: relative;
+top:0;
+width: 50px;
+height: 60px;
+background: rgba(255,255,255,0.1);
+display: flex;
+justify-self: center;
+align-items: center;
+font-size: 2.5em;
+}
+
+
+.toggle ion-icon{
+color: var(--white);
+
+}
+
+.GraphdBox{
+
+    position: relative;
+    width:50%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 0.8fr 0.8fr;
+    grid-gap: 50px;
+    min-height: 100px;
+    
+    }
+    
+    .GraphdBox .box{
+        position: relative;
+        
+        padding: 20px;
+        width: 95%;
+        border-radius: 20px;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #0f0;
+        background:rgb(0, 0, 0);
+    
+    }
+    
+    .GraphdBox .box .GName{
+        position: relative;
+        font-size: 1.5em;
+        font-weight: 500;
+        color: var(--white);
+    }
+    
+    
+.select{
+
+
+    position: relative;
+    height: 25px;
+    width: 100%;
+    display: flex;
+  
+
+
+
+ }
+ .select:focus,
+ .select:hover{
+    outline: none;
+   
+
+ }
+
+
+
+
+ .field{
+    position: relative;
+    height: 25px;
+    width: 40%;
+    display: flex;
+    margin-left: 25%;
+
+ }
+ .field span{
+    color: #222;
+    width: 30px;
+    line-height: 45px;
+ }
+
+ .field input{
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border:none;
+    outline: none;
+    color: #222;
+    font-size: 16px;
+    font-family: 'Poppins',sans-serif;
+
+ }
+
+
+ input[type="submit"]{
+    background: #05090ce1;
+    border: 1px solid #d9af26;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    border-left: 100px;
+    font-family:  'Montserrat',sans-serif;
+ }
+
+ input[type="submit"]:hover{
+    background: #2691d9;
+
+
+ }
+
+
+
+
+ 
+
+.details{
+    position: relative;
+    width: 94%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap:10px;
+    align-items: center;
+   
+}
+
+.details .recentOrders{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    padding: 20px;
+    background: linear-gradient(rgb(36, 56, 59),rgba(31, 31, 31, 0.753));
+    border-radius: 30px;
+    box-shadow:  0 0 10px rgba(255, 0, 0, 0.952);
+ 
+   
+ 
+
+}    
+
+
+
+.cardHeader h2{
+    font-weight: 600;
+    color: snow
+
+}
+
+
+
+
+.details table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+
+}
+.details table  thead td{
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    background: skyblue
+    
+
+}
+
+.details .recentOrders table tr{
+    color: var(--white);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+
+.details .recentOrders table tr:last-child{
+
+    border-bottom: none;
+
+}
+
+.details .recentOrders table tr:hover{
+    background: var(--white);
+    color: #000;
+}
+
+
+.details .recentOrders table tr td{
+    padding: 10px;
+}
+
+.details .recentOrders table tr td:last-child{
+    text-align: end;
+}
+
+.details .recentOrders table tr td:last-child(2){
+    text-align: end;
+}
+
+.details .recentOrders table tr td:last-child(3){
+    text-align: center;
+
+}
+.status.delivered{
+    padding: 2px 4px;
+    background: #8de02c;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+
+
+
+
+.Graph{
+position: relative;
+width:94%;
+padding: 20px;
+display: grid;
+
+}
+.Graph .Chart-content{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    width: 95%;
+    border-radius: 30px;
+    box-shadow:  0 0 10px rgb(25, 0, 255);
+   
+
+
+
+
+}
+.Graph .Chart-content:hover{
+    background: var(--blue);
+}
+.Graph .Chart-header h3{
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0.5px 5px rgb(34, 14, 252);
+}
+
+
+.main ul
+{
+    position:fixed;
+    top:2%;
+    left:72%;
+    transform: translate(50%,-50%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main ul li{
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    background: #262626;
+    margin: 0 10px;
+    border-radius: 50px;
+    transition: .5s;
+
+}
+.main ul li:hover{
+    background: #0070ff;
+}
+
+.main ul li span{
+   position: absolute;
+   width: 20px;
+   height:20px;
+   border:4px solid #fff;
+   transition: .5s;
+
+}
+.main ul li.next span{
+    top:50%;
+    right: 20%;
+    transform: translateY(-50%) rotate(-45deg);
+    border-left: none;
+    border-top: none;
+}
+
+.main ul li.next:hover span{
+    right: 16%;
+}
+
+.main ul li.next span:before{
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 4px;
+    background: #fff;
+    transform-origin: right;
+    transform: rotate(45deg) translate(6px,18px) scaleX(0);
+    transition: .5s;
+}
+.main ul li.next:hover span:before
+{
+    transform: rotate(45deg) translate(6px,18px) scaleX(1);  
+} 
+
+
+    
+___________________________________________________________________________________________________________________________________________________________
+# Second java dynamic
+
+var machines={
+    modig:["bert-base-uncased","bert-large-uncased","bert-base-cased",],
+    dmu:["openai-gpt"],
+    
+}
+
+var Parameter=document.getElementById("main_menu");
+var sub=document.getElementById("sub_menu");
+
+
+
+
+Parameter.addEventListener('change',function(){
+
+    var selected_option=machines[this.value];
+
+while(sub.options.length >0){
+    sub.options.remove(0);
+}
+
+
+Array.from(selected_option).forEach(function(el){
+    let option =new Option(el, el);
+    sub.appendChild(option);
+
+});
+
+})
+
+_____________________________________________________________________________________________________________________________________________________________
+#Third html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="thrid.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+<form method="POST" action="{{url_for('idle_run')}}" enctype="multipart/form-data">
+
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <div class="icon"></div>
+                        <div class="title"><h3>Predictive Analysis</h3></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="Home">
+                        <div class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </div>
+                        <div class="title">Dashboard</div>
+                    </a>
+                </li>
+                <!--            <li>-->
+                <!--                <a href="#">-->
+                <!--                    <div class="icon">-->
+
+                <!--                    </div>-->
+                <!--                    <div class="title">Forecast</div>-->
+                <!--                </a>-->
+                <!--            </li>-->
+                <li>
+                    <a href="Pre">
+                        <div class="icon">
+
+                        </div>
+                        <div class="title">Prediction</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="Idle">
+                        <div class="icon">
+
+                        </div>
+                        <div class="title">IdleRunTime</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="PLOT">
+                        <div class="icon">
+
+                        </div>
+                        <div class="title">Plot</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </div>
+                        <div class="title">LogOut</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="GraphdBox">
+                <div class="box">
+                    <div class="GName">Machine</div>
+                    <select class="select" name="machines" id="main_menu">
+                        <option>Select</option>
+                        <option value="modig">MODIG</option>
+                        <option value="dmu">DMG-DMU(85)</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <div class="GName">From</div>
+
+                    <input class="form-control" type="datetime" placeholder="Select Date" id="FROM" name="FROM">
+                </div>
+                <div class="box">
+                    <div class="GName">TO</div>
+
+                    <input class="form-control" type="datetime" placeholder="Select Date" id="TO" name="TO">
+                </div>
+
+            </div>
+            <div class="field space">
+                <div class="field">
+                    <input type="submit" value="UPLOAD">
+                </div>
+            </div>
+            <div class="GraphdBox">
+                <div class="box">
+                    <div class="GName">Number of Days</div>
+                    <select class="select" name="Days">
+                        <option deseable selected>Select Days</option>
+                        <option value=5>Last-5 day's</option>
+                        <option value=10>Last-10 day's</option>
+                        <option value=15>Last-15 day's</option>
+                        <option value=20>Last-20 day's</option>
+                        <option value=25>Last-25 day's</option>
+                        <option value=30>Last-30 day's</option>
+                        <option value=50>Last-50 day's</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field space">
+                <div class="field">
+                    <input type="submit" value="PLOT">
+                </div>
+            </div>
+
+            <div class="details">
+                <div class="Graph">
+                    <div class="Chart-header">
+                        <h3>
+                            Spindle_Power(%)
+                        </h3>
+                    </div>
+                    <div class="Chart-content">
+                        <canvas height="100px"  id="Chart1"></canvas>
+                    </div>
+                </div>
+                <div class="Graph">
+                    <div class="Chart-header">
+                        <h3>
+                            Spindle_Motor_Temperature(degC)
+                        </h3>
+                    </div>
+                    <div class="Chart-content">
+                        <canvas height="100px" id="Chart2"></canvas>
+                    </div>
+                </div>
+                <div class="Graph">
+                    <div class="Chart-header">
+                        <h3>
+                            Spindle_Front_Bearing_Temperature(degC)
+                        </h3>
+                    </div>
+                    <div class="Chart-content">
+                        <canvas height="100px" id="Chart3"></canvas>
+                    </div>
+                </div>
+                <div class="Graph">
+                    <div class="Chart-header">
+                        <h3>
+                            Spindle_Rear_Bearing_Temperature(degC)
+                        </h3>
+                    </div>
+                    <div class="Chart-content">
+                        <canvas height="100px" id="Chart4"></canvas>
+                    </div>
+                </div>
+                <div class="Graph">
+                    <div class="Chart-header">
+                        <h3>
+                            Spindle_Chiller_Temperature(degC)
+                        </h3>
+                    </div>
+                    <div class="Chart-content">
+                        <canvas height="100px" id="Chart5"></canvas>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+          config={
+                  minDate: "2021.07.23",
+                  enableTime: true,
+                  dateFormat: "Y-m-d H:i:S",
+                  }
+          flatpickr("input[type=datetime]", config);
+
+
+
+    </script>
+
+
+    <script>
+
+        let toggle=document.querySelector('.toggle');
+        let navigation=document.querySelector('.navigation');
+        let main=document.querySelector('.main');
+
+        toggle.onclick = function(){
+             navigation.classList.toggle('active')
+             main.classList.toggle('active')
+
+
+         }
+
+
+
+        let list= document.querySelectorAll(".navigation li " );
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item)=>
+        item.addEventListener('mouseover',activeLink));
+
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+    <script type="text/javascript">
+
+    // defining the chart data
+    let New_data1 = {
+      labels : [{% for i in df["_id"] %}
+                 "{{i}}",
+                {% endfor %}],
+
+      datasets : [{
+          data : [{% for j in df["spindlePower"] %}
+                    {{j}},
+                  {% endfor %}],
+          borderWidth: 2,
+          borderColor: '#6ab04c',
+		  lineTension: 0,
+		  label: 'View',
+      }]
+    }
+
+
+    let ctx1 = document.getElementById("Chart1").getContext("2d");
+    ctx1.height = 100
+    ctx1.width = 100
+
+    // creating the chart using canvas
+    let Chart1 = new Chart(ctx1, {
+      type: 'line',
+      data: New_data1,
+
+      options: {
+		maintainAspectRatio: false,
+		bezierCurve: false,
+	    }
+
+    });
+
+
+
+
+    </script>
+
+    <script type="text/javascript">
+
+    // defining the chart data
+    let New_data2 = {
+      labels : [{% for i in df["_id"] %}
+                 "{{i}}",
+                {% endfor %}],
+
+      datasets : [{
+          data : [{% for j in df["spindleMotorTemperature"] %}
+                    {{j}},
+                  {% endfor %}],
+          borderWidth: 2,
+          borderColor: '#6ab04c',
+		  lineTension: 0,
+		  label: 'View',
+
+      }]
+    }
+
+
+    let ctx2 = document.getElementById("Chart2").getContext("2d");
+    ctx2.height = 100
+    ctx2.width = 100
+
+    // creating the chart using canvas
+    let Chart2 = new Chart(ctx2, {
+      type: 'line',
+      data: New_data2,
+
+      options: {
+		maintainAspectRatio: false,
+		bezierCurve: false,
+	    }
+
+
+    });
+
+
+
+
+    </script>
+
+
+    <script type="text/javascript">
+
+    // defining the chart data
+    let New_data3 = {
+      labels : [{% for i in df["_id"] %}
+                 "{{i}}",
+                {% endfor %}],
+
+      datasets : [{
+          data : [{% for j in df["spindleFrontBearingTemperature"] %}
+                    {{j}},
+                  {% endfor %}],
+          borderWidth: 2,
+          borderColor: '#6ab04c',
+		  lineTension: 0,
+		  label: 'View',
+
+      }]
+    }
+
+
+    let ctx3 = document.getElementById("Chart3").getContext("2d");
+    ctx3.height = 100
+    ctx3.width = 100
+
+    // creating the chart using canvas
+    let Chart3 = new Chart(ctx3, {
+      type: 'line',
+      data: New_data3,
+
+      options: {
+		maintainAspectRatio: false,
+		bezierCurve: false,
+	    }
+
+
+    });
+
+
+
+
+    </script>
+    <script type="text/javascript">
+
+    // defining the chart data
+    let New_data4 = {
+      labels : [{% for i in df["_id"] %}
+                 "{{i}}",
+                {% endfor %}],
+
+      datasets : [{
+          data : [{% for j in df["spindleRearBearingTemperature"] %}
+                    {{j}},
+                  {% endfor %}],
+          borderWidth: 2,
+          borderColor: '#6ab04c',
+		  lineTension: 0,
+		  label: 'View',
+
+      }]
+    }
+
+
+    let ctx4 = document.getElementById("Chart4").getContext("2d");
+    ctx4.height = 100
+    ctx4.width = 100
+
+    // creating the chart using canvas
+    let Chart4 = new Chart(ctx4, {
+      type: 'line',
+      data: New_data4,
+
+      options: {
+		maintainAspectRatio: false,
+		bezierCurve: false,
+	    }
+
+
+    });
+
+
+
+
+    </script>
+    <script type="text/javascript">
+
+    // defining the chart data
+    let New_data5 = {
+      labels : [{% for i in df["_id"] %}
+                 "{{i}}",
+                {% endfor %}],
+
+      datasets : [{
+          data : [{% for j in df["spindleChillerTemperature"] %}
+                    {{j}},
+                  {% endfor %}],
+          borderWidth: 2,
+          borderColor: '#6ab04c',
+		  lineTension: 0,
+		  label: 'View',
+
+      }]
+    }
+
+
+    let ctx5 = document.getElementById("Chart5").getContext("2d");
+    ctx5.height = 100
+    ctx5.width = 100
+
+    // creating the chart using canvas
+    let Chart5 = new Chart(ctx5, {
+      type: 'line',
+      data: New_data5,
+
+      options: {
+		maintainAspectRatio: false,
+		bezierCurve: false,
+	    }
+
+
+    });
+
+
+</script>
+
+
+    <script>
+
+        let toggle=document.querySelector('.toggle');
+        let navigation=document.querySelector('.navigation');
+        let main=document.querySelector('.main');
+
+        toggle.onclick = function(){
+             navigation.classList.toggle('active')
+             main.classList.toggle('active')
+
+
+         }
+
+
+
+        let list= document.querySelectorAll(".navigation li " );
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item)=>
+        item.addEventListener('mouseover',activeLink));
+
+
+
+
+
+    </script>
+
+</form>
+</body>
+
+</html>
+
+_____________________________________________________________________________________________________________________________________________________________
+#third css
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*
+*{
+margin: 0%;
+padding: 0%;
+font-family: 'Ubuntu',sans-serif;
+}
+:root{
+--blue:#003147;
+--white:#fff;
+--grey:#f5f5f5;
+--black1:#222;
+--black2:#999;
+}
+
+
+
+
+body{
+
+min-height: 100%;
+background: #161623;
+}
+
+.container{
+height: 100vh;
+width: 100%;
+padding-right: 3%;
+box-sizing: border-box;
+position: relative;
+}
+
+.navigation{
+position: fixed;
+width: 250px;
+height: 100%;
+box-shadow: 20px,20px,50px rgba(0,0,0,0.5);
+background: rgba(255,255,255,0.1);
+border-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-style:inset;
+border-left-color: #1996fc;
+border-bottom-color:#1996fc;
+border-top-color: #f0f;
+border-right-color: #f0f;
+backdrop-filter: blur(5px);
+transition: 0.5s;
+overflow:hidden ;
+
+}
+
+
+
+.navigation.active{
+width: 80px;
+}
+
+.navigation ul{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+
+}
+
+.navigation ul li{
+position: relative;
+width: 200%;
+list-style: none;
+border-top-left-radius: 30px;
+border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered
+{
+
+background: var(--white);
+
+}
+
+
+.navigation ul li:nth-child(1){
+margin-bottom: 40px;
+pointer-events: none;
+}
+
+
+.navigation ul li a{
+position: relative;
+display: block;
+width: 100%;
+display: flex;
+text-decoration: none;
+color: #fff;
+
+
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a
+{
+color: var(--blue);
+}
+
+.navigation ul li a .icon{
+position: relative;
+display: block;
+min-width: 60px;
+height: 60px;
+line-height: 70px;
+text-align: center;
+
+}
+.navigation ul li a .icon ion-icon{
+font-size: 20px;
+
+}
+
+.navigation ul li a .title{
+position: relative;
+display: block;
+padding: 0 10px;
+height: 60px;
+line-height: 60px;
+text-align: start;
+white-space: nowrap;
+
+}
+
+.main{
+position: relative;
+width: calc(100% -255px);
+left: 255px;
+min-height:100vh;
+box-shadow: 20px,20px,50px rgba(0,0,0,0.5);
+background: rgba(255,255,255,0.1);
+border-radius: 10px;
+border-style:outset;
+border-style:inset;
+border-left-color: #1996fc;
+border-bottom-color:#1996fc;
+border-top-color: #f0f;
+border-right-color: #f0f;
+backdrop-filter: blur(2px);
+transition: 0.5s;
+
+}
+
+.main.active{
+width: calc(100% -80px);
+left:80px;
+
+
+
+}
+.topbar{
+
+width:100%;
+height: 60px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 1px;
+
+}
+.toggle{
+position: relative;
+top:0;
+width: 50px;
+height: 60px;
+background: rgba(255,255,255,0.1);
+display: flex;
+justify-self: center;
+align-items: center;
+font-size: 2.5em;
+}
+
+
+.toggle ion-icon{
+color: var(--white);
+
+}
+
+.GraphdBox{
+
+    position: relative;
+    width:50%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 0.6fr 0.3fr 0.3fr;
+    grid-gap: 60px;
+
+   
+
+  
+    
+    }
+    
+    .GraphdBox .box{
+        position: relative;
+        align-items: center;
+        padding: 20px;
+        width: 95%;
+        border-radius: 20px;
+        cursor: pointer;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #0f0;
+        background:rgb(0, 0, 0);
+      
+    
+    }
+    
+    .GraphdBox .box .GName{
+        position: relative;
+        font-size: 1.5em;
+        font-weight: 500;
+        color: var(--white);
+    }
+    
+    
+.select{
+
+    
+    position: relative;
+    height: 25px;
+    width: 80%;
+    display: flex;
+  
+
+
+
+ }
+ .select:focus,
+ .select:hover{
+    outline: none;
+   
+
+ }
+
+
+
+
+ .field{
+    position: relative;
+    height: 25px;
+    width: 40%;
+    display: flex;
+    margin-left: 25%;
+
+ }
+ .field span{
+    color: #222;
+    width: 30px;
+    line-height: 45px;
+ }
+
+ .field input{
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border:none;
+    outline: none;
+    color: #222;
+    font-size: 16px;
+    font-family: 'Poppins',sans-serif;
+
+ }
+
+
+ input[type="submit"]{
+    background: #05090ce1;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    border-left: 100px;
+    border-radius: 30px;
+    box-shadow:  0 0 10px rgb(255, 0, 0);
+   
+ }
+
+ input[type="submit"]:hover{
+    background: #ff0000;
+
+
+ }
+
+
+
+
+ 
+
+
+
+
+.Graph{
+position: relative;
+width:94%;
+padding: 20px;
+display: grid;
+
+}
+.Graph .Chart-content{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    width: 95%;
+    border-radius: 30px;
+    box-shadow:  0 0 10px rgb(25, 0, 255);
+   
+
+
+
+
+}
+.Graph .Chart-content:hover{
+    background: var(--blue);
+}
+.Graph .Chart-header h3{
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0.5px 5px rgb(34, 14, 252);
+}
+
+
+.main ul
+{
+    position:fixed;
+    top:2%;
+    left:72%;
+    transform: translate(50%,-50%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main ul li{
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    background: #262626;
+    margin: 0 10px;
+    border-radius: 50px;
+    transition: .5s;
+
+}
+.main ul li:hover{
+    background: #0070ff;
+}
+
+.main ul li span{
+   position: absolute;
+   width: 20px;
+   height:20px;
+   border:4px solid #fff;
+   transition: .5s;
+
+}
+.main ul li.next span{
+    top:50%;
+    right: 20%;
+    transform: translateY(-50%) rotate(-45deg);
+    border-left: none;
+    border-top: none;
+}
+
+.main ul li.next:hover span{
+    right: 16%;
+}
+
+.main ul li.next span:before{
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 4px;
+    background: #fff;
+    transform-origin: right;
+    transform: rotate(45deg) translate(6px,18px) scaleX(0);
+    transition: .5s;
+}
+.main ul li.next:hover span:before
+{
+    transform: rotate(45deg) translate(6px,18px) scaleX(1);  
+} 
+
+
+    
+______________________________________________________________________________________________________________________________________________________________
+
+
+
+
+ 
+
