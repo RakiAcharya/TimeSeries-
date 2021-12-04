@@ -682,3 +682,61 @@ var lineChart = new Chart(ctx, {
 //         config
 //       );
 // })
+# ==================================================================================================================== #
+
+# Import Packages / libraries
+# -----------****-----------#
+
+import rpack
+import itertools
+import matplotlib
+import pandas as pd
+import matplotlib.pyplot as plt
+from collections import Counter
+from itertools import chain, combinations
+
+# -------------****--------------#
+p = range(0, 5)
+q = range(0, 5)
+d = range(0, 5)
+
+pdq_combination = list(itertools.product(p, d, q))
+
+
+Max_Size = []
+
+
+def ORDER(Sizes):
+    maxList = []
+    Sizes = list((Counter(Sizes) - Counter(maxList)).elements())
+    while len(Sizes) > 0:
+        Diff_Size = []
+        for subset in range(len(Sizes)+1):
+            try:
+                positions = rpack.pack(Sizes[0:subset], max_width=240, max_height=120)
+                Diff_Size.append(Sizes[0:subset])
+            except:
+                pass
+
+        maxList = max(Diff_Size, key=lambda i: len(i))
+        New_list=list((Counter(Sizes) - Counter(maxList)).elements())
+        for i in New_list:
+            New_maxList= max(Diff_Size, key=lambda i: len(i))
+            print(New_maxList)
+            print(i)
+
+
+
+        maxLength = len(maxList)
+        print(maxList, maxLength)
+        Max_Size.append(maxList)
+        Sizes = list((Counter(Sizes) - Counter(maxList)).elements())
+    return Max_Size,len(Max_Size)
+
+
+
+
+
+Sizes = [(33, 41), (32, 46), (51, 103), (41, 77), (38, 61), (56, 36), (56, 86), (51, 102), (41, 77), (36, 61), (33, 41), (33, 46), (33, 46), (102, 51), (33, 46), (61, 33), (44, 85), (43, 69), (48, 84), (43, 69), (35, 47), (39, 74), (39, 74), (33, 44), (147, 56), (147, 51), (112, 46), (112, 45), (28, 97), (28, 97), (28, 42), (41, 46), (51, 86), (51, 74), (51, 74), (51, 103), (51, 86), (51, 71), (51, 86), (51, 103), (51, 86), (51, 71), (33, 41), (32, 46), (51, 103), (41, 77), (38, 61), (56, 36), (56, 86), (51, 102), (41, 77), (36, 61), (33, 41), (33, 46), (33, 46), (102, 51), (61, 33), (44, 85), (43, 69), (33, 46), (48, 84), (43, 69), (35, 47), (39, 74), (39, 74), (33, 44), (147, 56), (147, 51), (112, 46), (112, 45), (28, 97), (28, 97), (28, 42), (41, 46), (51, 86), (51, 86), (51, 74), (51, 74), (51, 71), (51, 71), (51, 86), (51, 86), (188, 28), (170, 36), (188, 28), (170, 36)]
+
+ORDER(Sizes)
