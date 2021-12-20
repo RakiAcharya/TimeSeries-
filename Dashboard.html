@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='Navbar.css'>
+    <script src='https://cdn.plot.ly/plotly-2.6.3.min.js'></script>
+    <title>Document</title>
+
+</head>
+<body>
+<div class="container">
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                    <div class="icon"></div>
+                    <div class="title"><h1>Brand Name</h1></div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                        </i></div>
+                    <div class="title">Dashboard</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                    </div>
+                    <div class="title">Customers</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="title">Help</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <ion-icon name="settings-outline"></ion-icon>
+                    </div>
+                    <div class="title">Settings</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <ion-icon name="key-outline"></ion-icon>
+                    </div>
+                    <div class="title">Password</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                    </div>
+                    <div class="title">SignOut</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrapper">
+    <div class="row">
+        <div class="col-3 col-m-6 col-sm-6">
+            <div class="counter bg-primary">
+                <p>
+                    <i class="fas fa-tasks"></i>
+                </p>
+                <h3>100+</h3>
+               <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+            </div>
+        </div>
+        <div class="col-3 col-m-6 col-sm-6">
+            <div class="counter bg-warning">
+                <p>
+                    <i class="fas fa-spinner"></i>
+                </p>
+                <h3>100+</h3>
+                <canvas id="Chart1"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+<script>
+    var data = [
+  {
+    type: "indicator",
+    mode: "gauge+number+delta",
+    value: 220,
+    delta: { reference: 200, increasing: { color: "RebeccaPurple" } },
+    gauge: {
+      axis: { range: [null, 500], tickwidth: 1, tickcolor: "darkblue" },
+      bar: { color: "darkblue" },
+      bgcolor: "white",
+      borderwidth: 2,
+
+      bordercolor: "gray",
+      steps: [
+        { range: [0, 250], color: 	"#00FF00" },
+        { range: [250, 400], color: "#FFA500" },
+        { range: [400, 500], color: "red" }
+      ],
+
+
+      threshold: {
+        line: { color: "black", width: 4 },
+        thickness: 0.75,
+        value: 490
+      }
+    }
+  }
+];
+
+var layout = {
+  width: 250,
+  height: 150,
+  margin: { t: 25, r: 25, l: 25, b: 25 },
+  font: { color: "darkblue", family: "Arial" }
+};
+
+
+
+Plotly.newPlot('myDiv', data, layout,{displaylogo: false});
+
+
+</script>
+<script>
+        let toggle=document.querySelector('.toggle');
+        let navigation=document.querySelector('.navigation');
+        let main=document.querySelector('.main');
+
+        toggle.onclick = function(){
+             navigation.classList.toggle('active')
+             main.classList.toggle('active')
+
+
+         }
+
+
+
+        let list= document.querySelectorAll(".navigation li " );
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item)=>
+        item.addEventListener('mouseover',activeLink));
+
+</script>
+
+
+</body>
+</html>
+
+
+

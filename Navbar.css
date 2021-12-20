@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Ubuntu',sans-serif;
+}
+:root{
+    --blue:#003147;
+    --white:#fff;
+    --grey:#f5f5f5;
+    --black1:#222;
+    --black2:#999;
+}
+
+
+
+
+body{
+    min-height: 100wh;
+    overflow-x: hidden;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+}
+
+
+
+ 
+.wrapper {
+	padding: 10px;
+	margin-left: 120px;
+	padding-top: 15px;
+	background: var(--second-bg-color);
+	transition: margin-left .5s;
+}
+
+
+
+
+.sidebar-expand .wrapper {
+	margin-left: 250px;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+
+
+
+}
+
+.row:after, .row:before {
+	box-sizing: border-box;
+	width:200px
+}
+
+[class*="col-"] {
+	padding: 5px;
+}
+
+
+
+/* Small devices >= 600px */
+@media only screen and (min-width: 600px) {
+	.col-sm-1 {width: 8.33%;}
+	.col-sm-2 {width: 16.66%;}
+	.col-sm-3 {width: 25%;}
+	.col-sm-4 {width: 33.33%;}
+	.col-sm-5 {width: 41.66%;}
+	.col-sm-6 {width: 50%;}
+	.col-sm-7 {width: 58.33%;}
+	.col-sm-8 {width: 66.66%;}
+	.col-sm-9 {width: 75%;}
+	.col-sm-10 {width: 83.33%;}
+	.col-sm-11 {width: 91.66%;}
+	.col-sm-12 {width: 100%;}
+}
+
+/* Medium devices >= 768px */
+@media only screen and (min-width: 768px) {
+	.col-m-1 {width: 8.33%;}
+	.col-m-2 {width: 16.66%;}
+	.col-m-3 {width: 25%;}
+	.col-m-4 {width: 33.33%;}
+	.col-m-5 {width: 41.66%;}
+	.col-m-6 {width: 50%;}
+	.col-m-7 {width: 58.33%;}
+	.col-m-8 {width: 66.66%;}
+	.col-m-9 {width: 75%;}
+	.col-m-10 {width: 83.33%;}
+	.col-m-11 {width: 91.66%;}
+	.col-m-12 {width: 100%;}
+}
+
+/* laptops/desktops >= 992px */
+@media only screen and (min-width: 992px) {
+	.col-1 {width: 8.33%;}
+	.col-2 {width: 16.66%;}
+	.col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+}
+
+/* large laptops and desktops >= 1200px */
+@media only screen and (min-width: 1200px) {
+	.col-xl-1 {width: 8.33%;}
+	.col-xl-2 {width: 16.66%;}
+	.col-xl-3 {width: 25%;}
+	.col-xl-4 {width: 33.33%;}
+	.col-xl-5 {width: 41.66%;}
+	.col-xl-6 {width: 50%;}
+	.col-xl-7 {width: 58.33%;}
+	.col-xl-8 {width: 66.66%;}
+	.col-xl-9 {width: 75%;}
+	.col-xl-10 {width: 83.33%;}
+	.col-xl-11 {width: 91.66%;}
+	.col-xl-12 {width: 100%;}
+}
+
+.counter {
+	padding: 5px;
+    margin-top: 1px;
+	text-align: center;
+	color: rgb(7, 7, 7);
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+a {
+  color: #5f89a7;
+  text-decoration: none;
+}
+
+.color-red {
+  stop-color: #e23131;
+}
+
+.color-yellow {
+  stop-color: #fbe500;
+}
+
+.color-green {
+  stop-color: #25cd6b;
+}
+
+
+.gauge-container {
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.gauge{
+  height: 150px;
+  width: 240px;
+}
+.gauge .dxg-range.dxg-background-range {
+  fill: url(#gradientGauge);
+}
+.gauge .dxg-line {
+  -webkit-transform: scaleX(1.04) scaleY(1.03) translate(-4px, -4px);
+          transform: scaleX(1.04) scaleY(1.03) translate(-4px, -4px);
+}
+.gauge .dxg-line path:first-child,
+.gauge .dxg-line path:last-child {
+  display: none;
+}
+.gauge .dxg-line path:nth-child(2),
+.gauge .dxg-line path:nth-child(6) {
+  stroke: #ed811c;
+}
+.gauge .dxg-line path:nth-child(3),
+.gauge .dxg-line path:nth-child(5) {
+  stroke: #a7db29;
+}
+.gauge .dxg-line path:nth-child(4) {
+  stroke: #25cd6b;
+}
+.gauge .dxg-elements text:first-child {
+  -webkit-transform: translate(19px, 13px);
+          transform: translate(19px, 13px);
+}
+.gauge .dxg-elements text:last-child {
+  -webkit-transform: translate(-27px, 14px);
+          transform: translate(-27px, 14px);
+}
+.gauge .dxg-value-indicator path {
+  -webkit-transform: scale(1.2) translate(0, -5px);
+          transform: scale(1.2) translate(0, -5px);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+.gauge .dxg-value-indicator .dxg-title {
+  text-transform: uppercase;
+
+}
+.gauge .dxg-value-indicator .dxg-title text:first-child {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+.gauge .dxg-value-indicator .dxg-spindle-border:nth-child(4),
+.gauge .dxg-value-indicator .dxg-spindle-hole:nth-child(5) {
+  -webkit-transform: translate(0, -60px);
+          transform: translate(0, -60px);
+}
+.gauge .dxg-value-indicator .dxg-spindle-hole {
+  fill: #26323a;
+}
